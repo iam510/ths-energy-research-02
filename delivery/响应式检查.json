@@ -1,0 +1,18 @@
+[
+  {
+    "width": 375,
+    "pageWidth": 375
+  },
+  {
+    "pageWidth": 768,
+    "width": 768
+  },
+  {
+    "pageWidth": 1024,
+    "width": 1024
+  },
+  {
+    "pageWidth": 1440,
+    "width": 1440
+  }
+]

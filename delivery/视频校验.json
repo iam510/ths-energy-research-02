@@ -1,0 +1,10 @@
+{
+  "file": "演示视频.mp4",
+  "durationSeconds": 86.5,
+  "width": 924,
+  "height": 978,
+  "fps": 2,
+  "frames": 173,
+  "bytes": 862333,
+  "method": "CUA实际页面屏幕采样分段录制，添加说明字幕，未伪造UI状态。"
+}

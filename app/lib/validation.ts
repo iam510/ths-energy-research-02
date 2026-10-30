@@ -1,0 +1,10 @@
+import {z} from "zod";
+export const allowedHosts=["catl.com","evebattery.com","sungrowpower.com","cninfo.com.cn","szse.cn","sec.gov","ir.tesla.com","ir.fluenceenergy.com","lgensol.com","lgessbattery.com","lgcorp.com","hkexnews.hk"];
+export function officialUrl(value:string) {try {const u=new URL(value);return u.protocol==="https:"&&!u.username&&!u.password&&(!u.port||u.port==="443")&&allowedHosts.some(h=>u.hostname===h||u.hostname.endsWith(`.${h}`));}catch{return false;}}
+export const evidenceSchema=z.object({
+ id:z.string().min(1).max(90),companyId:z.enum(["catl","eve","sungrow","tesla","fluence","lg"]),title:z.string().trim().min(3).max(240),url:z.string().max(2000).refine(officialUrl,"请使用允许的官方 HTTPS 来源"),publishedAt:z.string().regex(/^\d{4}-\d{2}-\d{2}$|^未标注$/).nullable(),period:z.string().min(1).max(80),locator:z.string().min(2).max(240),excerpt:z.string().max(500),claim:z.string().trim().min(10).max(2000),sourceType:z.string().max(80),reviewStatus:z.string().max(80),metric:z.object({label:z.string().max(120),value:z.number().finite(),unit:z.string().max(60),currency:z.string().max(20).optional(),scope:z.string().max(200)}).optional(),imported:z.boolean().optional(),kind:z.string().max(60).optional(),retrievedAt:z.string().max(30).optional(),timeAnomaly:z.boolean().optional(),notes:z.string().max(500).optional(),
+}).strict();
+export const updateSchema=z.object({expectedRevision:z.number().int().nonnegative(),confirmed:z.literal(true),reason:z.string().trim().min(5).max(300),evidence:evidenceSchema});
+export const analysisInput=z.object({companyId:z.enum(["catl","eve","sungrow","tesla","fluence","lg"]),scenarioId:z.enum(["cost","policy","demand"]),mode:z.enum(["offline","live"]).default("offline")}).strict();
+export function blockedRequest(text:string) {return /买入|卖出|荐股|保证收益|稳赚|必涨|涨停|目标价|ignore.*instruction|system prompt|忽略.*指令/i.test(text);}
+export function fingerprint(e:{companyId:string;url:string;claim:string}) {return `${e.companyId}|${e.url.replace(/#.*$/, "")}|${e.claim.replace(/\s/g,"")}`;}

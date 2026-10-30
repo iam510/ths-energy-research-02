@@ -1,0 +1,18 @@
+[
+  {
+    "id": "tesla-05",
+    "companyId": "tesla",
+    "title": "Tesla 2025 Form 10-K",
+    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+    "publishedAt": "2026-01-29",
+    "period": "2025年度；截至2025-12-31",
+    "locator": "Item 1 / Energy Storage Products / Autobidder and Powerhub",
+    "excerpt": "",
+    "claim": "公司披露Autobidder用于Megapack、Powerhub用于分布式能源的实时控制与优化，可支持储能调度软件/服务业务归属；不能据此断言其拥有或运营全部相关电站资产，也未披露这两款软件单独收入。",
+    "sourceType": "annual-report",
+    "reviewStatus": "source-checked",
+    "retrievedAt": "2026-10-30",
+    "timeAnomaly": false,
+    "notes": "可作为新增至本研究库的真实旧材料示例；来源发布日期保持2026-01-29，不伪装成2026-10-30新公告。"
+  }
+]
