@@ -13,5 +13,13 @@
   "secretValueIncluded": false,
   "runtimeDeployed": true,
   "deploymentVersion": "appgprj_6ae4a0f63ee4819181208452e5f39ee7~appgver_be4a63d9fcf08191893591f630d8b342",
-  "sourceCommit": "bf4986e389fb389cca70e8f531138b4552bb9a63"
+  "sourceCommit": "bf4986e389fb389cca70e8f531138b4552bb9a63",
+  "lastRecheckedAt": "2026-10-30T15:13:35.970679+00:00",
+  "directSmokeHttpStatus": 402,
+  "hostedBrowserResult": "MiniMax账户余额不足，未完成模型调用。",
+  "offlineFallbackVerified": true,
+  "recheckEvidence": [
+    "13-线上真实调用复测.png",
+    "14-计费失败后离线分析.png"
+  ]
 }

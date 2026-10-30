@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T15:01:44.016385+00:00",
+  "generatedAt": "2026-10-30T15:13:37.439509+00:00",
   "root": "02_产业链跨市场与公司研究",
   "files": [
     {
@@ -683,6 +683,16 @@
       "sha256": "0d18dc4b5344d9bbae6ccc92a62820e839f0a5ef0f6648b919282ffbd8520522"
     },
     {
+      "path": "delivery/13-线上真实调用复测.png",
+      "bytes": 50730,
+      "sha256": "2cd8a529ae9d5428e6ca70c1c310ac017b10c025506adae4c389bebc62d4e88a"
+    },
+    {
+      "path": "delivery/14-计费失败后离线分析.png",
+      "bytes": 72425,
+      "sha256": "ce9c1d0878535daaab482bbcf1ecf0979f4bf7ac0432b3a3b5da0d1aeedf4820"
+    },
+    {
       "path": "delivery/API测试结果-本地.json",
       "bytes": 2118,
       "sha256": "8f9b4f29ea2fea20d51a009e6ebc6afdcc3a824a294171d1eeda08bb9951d359"
@@ -694,8 +704,8 @@
     },
     {
       "path": "delivery/MiniMax接入验证.json",
-      "bytes": 622,
-      "sha256": "bc0d14086ee027308ae2ff4478696e93b84ca62363d8cd39c7b407d8e0e5310c"
+      "bytes": 935,
+      "sha256": "0e43204afa632be40c519ed1494abbb3f78adb63e16f8fef3b565fabf86d721a"
     },
     {
       "path": "delivery/MiniMax模拟与边界测试.txt",
@@ -814,8 +824,8 @@
     },
     {
       "path": "docs/AI使用与验证记录.md",
-      "bytes": 4331,
-      "sha256": "2c759aa5b66a9de5252bcc0cdd70a74a177867f93804a6a011b45f23f3bcf640"
+      "bytes": 4933,
+      "sha256": "bdb031af5abdd73f4fcc030f86d791bfd6aaf1e653285c3caf7ec14c40d083e1"
     },
     {
       "path": "docs/实现规划.md",
@@ -834,8 +844,8 @@
     },
     {
       "path": "docs/测试说明.md",
-      "bytes": 6597,
-      "sha256": "259ac0228b41fd9034b3fbac3b0c690062a25b242e160d21cfd7f5387dc7135a"
+      "bytes": 7025,
+      "sha256": "0cc7da9ca636c12c9363922eae68cd101da0a667433fabb18d27abc4f0a8cfc5"
     },
     {
       "path": "docs/部署与交付.md",
