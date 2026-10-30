@@ -12,5 +12,5 @@ export async function POST(request:Request) {
   const result=buildAnalysis(parsed.data.companyId,parsed.data.scenarioId,head.evidence);
   if(!validateCitations(result,head.evidence))return json({error:"引用校验未通过，未生成正常研究结果。"},422);
   return json({analysis:result,revision:head.revision,model:null,mode:"offline-rules"});
- }catch{return json({error:"研究请求未完成，请检查请求或稍后重试。原研究版本未改变。"},503);}
+ }catch(error){if(error instanceof SyntaxError)return json({error:"JSON 格式错误"},400);if(error instanceof Error&&/长度|JSON|为空/.test(error.message))return json({error:error.message},400);return json({error:"研究请求未完成，请检查请求或稍后重试。原研究版本未改变。"},503);}
 }

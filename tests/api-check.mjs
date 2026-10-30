@@ -7,6 +7,7 @@ async function check(name,fn){await fn();results.push({name,status:"passed",at:n
 let example;let start;
 await check("读取种子数据与更新示例",async()=>{const r=await call("/api/research");assert.equal(r.response.status,200);assert.equal(r.data.mode,"offline");start=r.data.versions[0];assert.equal(start.revision,0);assert.equal(start.evidence.length,23);example=r.data.example;assert.equal(example.id,"tesla-05");});
 await check("离线传导返回有效引用，明确无模型调用",async()=>{const r=await call("/api/analyze",{method:"POST",body:{companyId:"tesla",scenarioId:"cost",mode:"offline"}});assert.equal(r.response.status,200);assert.equal(r.data.model,null);assert.equal(r.data.analysis.mode,"offline-rules");for(const f of r.data.analysis.facts)for(const id of f.evidenceIds)assert.ok(start.evidence.some(e=>e.id===id));});
+await check("分析请求无效JSON返回400",async()=>{assert.equal((await call("/api/analyze",{method:"POST",body:"{invalid",raw:true})).response.status,400);});
 await check("真实模型未配置时503，不伪装正常调用",async()=>{assert.equal((await call("/api/analyze",{method:"POST",body:{companyId:"tesla",scenarioId:"cost",mode:"live"}})).response.status,503);});
 await check("未知公司与交易指令拒绝",async()=>{assert.equal((await call("/api/analyze",{method:"POST",body:{companyId:"buy-now",scenarioId:"cost",mode:"offline"}})).response.status,400);});
 const payload={expectedRevision:0,confirmed:true,reason:"API自动化验证：补充已核验软件业务证据",evidence:example};

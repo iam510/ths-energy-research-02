@@ -1,0 +1,10 @@
+{
+  "url": "https://storage-research-510.green-trout-2026.chatgpt.site",
+  "status": "succeeded",
+  "sourceCommit": "bf70ade60efe82758ffe81b85da6611930b96941",
+  "versionId": "appgprj_6ae4a0f63ee4819181208452e5f39ee7~appgver_aad00d7f1234819187babd8f3ef59c22",
+  "deployedAt": "2026-10-30T14:29:51.638903+00:00",
+  "access": "public",
+  "runtimeModel": null,
+  "mode": "offline-rules"
+}
