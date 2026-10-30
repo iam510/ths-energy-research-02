@@ -1,0 +1,9 @@
+{
+  "verifiedAt": "2026-10-30T15:26:54.340Z",
+  "httpStatus": 422,
+  "error": "模型新增了材料中没有的数字，已拒绝展示。",
+  "code": "UNSUPPORTED_NUMBER",
+  "runId": "e3e8ee8d-022e-4e12-b946-96878ff30da7",
+  "model": "MiniMax-M3.1-Flash",
+  "mode": "live-failed"
+}

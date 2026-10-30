@@ -1,0 +1,19 @@
+{
+  "verifiedAt": "2026-10-30T15:33:42.494885+00:00",
+  "verification": "实际公开网站点击AI解释可比性后读取页面最终状态；完整页面文本保存在MiniMax真实比较页面.txt",
+  "left": "sungrow",
+  "right": "fluence",
+  "resultDisplayed": true,
+  "receipt": {
+    "model": "MiniMax-M3.1-Flash",
+    "promptVersion": "minimax-research-v3",
+    "runId": "a3a60ac5-a1e4-4699-b371-9730f03d2324",
+    "usage": {
+      "inputTokens": 1375,
+      "outputTokens": 702,
+      "totalTokens": 2077
+    },
+    "durationMsApprox": 9900
+  },
+  "review": "引用均存在；保留人工复核要求。一次模型解释把储能行业毛利率称为储能系统分产品毛利率，不能把模型措辞作为同口径财务证明；数值表格及原始证据保留原口径。"
+}

@@ -1,10 +1,17 @@
 {
   "file": "演示视频.mp4",
-  "durationSeconds": 86.5,
-  "width": 924,
-  "height": 978,
+  "durationSeconds": 104.0,
+  "width": 1280,
+  "height": 812,
   "fps": 2,
-  "frames": 173,
-  "bytes": 862333,
-  "method": "CUA实际页面屏幕采样分段录制，添加说明字幕，未伪造UI状态。"
+  "frames": 208,
+  "bytes": 915827,
+  "method": "CUA实际页面屏幕采样分段录制，添加说明字幕，未伪造UI状态。",
+  "decodedFrames": 208,
+  "decodedDurationSeconds": 104.0,
+  "decodedSize": [
+    1280,
+    812
+  ],
+  "contactSheet": "20-真实AI视频抽帧检查.png"
 }

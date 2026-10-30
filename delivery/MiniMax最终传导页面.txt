@@ -1,0 +1,128 @@
+Browser tab: 7, Title: "储能研究台 · 让每个判断都有依据", URL: "https://storage-research-510.green-trout-2026.chatgpt.site/?view=transmission".
+1 AXWebArea 储能研究台 · 让每个判断都有依据, URL: storage-research-510.green-trout-2026.chatgpt.site/?view=transmission
+	2 container
+		3 link Description: 储能研究台 ENERGY INTELLIGENCE, Value: storage-research-510.green-trout-2026.chatgpt.site/?view=chain
+		4 text 研究工作台 01
+		5 container 主导航
+			6 button 产业链研究
+			7 button 中外公司对照
+			8 button 变化传导
+			9 button 更新与复核
+		10 text 当前研究专题
+		11 heading 电化学储能, Value: 3
+			12 text 电化学储能
+		13 container
+			14 text 从业务事实出发，
+			15 text 追踪产业变化。
+		16 text 公开披露研究样本 事实有出处，推断有边界 研究信息 · 非投资建议
+	17 container
+		18 text 研究工作台 变化传导 MiniMax 已配置
+		19 button 导出研究
+	20 container main-content
+		21 text INDUSTRY RESEARCH / 研究专题 001
+		22 heading 变化如何传导，判断如何成立。, Value: 1
+			23 text 变化如何传导，判断如何成立。
+		24 text 沿着业务路径分析可能影响，明确生效条件与反向因素。
+		25 text 公开资料快照
+		26 text 资料核验 2026.10.30
+		27 text 主要为 2025 年度披露
+		228 container
+			229 text 01 / 定义研究情景
+			230 heading 从一个外部变化开始, Value: 2
+				231 text 从一个外部变化开始
+			232 text 以下均为假设，不表示事件已发生。 研究方式
+			233 pop up button (collapsed, settable) Description: 研究方式, Value: MiniMax AI 分析, Secondary Actions: Expand
+				234 menu
+					235 (selected) MiniMax AI 分析
+					236 离线规则
+			237 container 选择变化
+				238 text 选择变化
+				239 container
+					240 radio button (settable, integer) Description: 电芯采购成本下降 情景假设, Value: 1
+					241 text 电芯采购成本下降 情景假设
+				242 container
+					243 radio button (settable, integer) Description: 海外贸易成本上升 情景假设, Value: 0
+					244 text 海外贸易成本上升 情景假设
+				245 container
+					246 radio button (settable, integer) Description: 下游储能需求增长 情景假设, Value: 0
+					247 text 下游储能需求增长 情景假设
+			248 text 分析公司
+			249 pop up button (collapsed, settable) 分析公司, Value: 特斯拉, Secondary Actions: Expand
+				250 menu
+					251 宁德时代
+					252 亿纬锂能
+					253 阳光电源
+					254 (selected) 特斯拉
+					255 Fluence
+					256 LG 新能源
+			257 text 将已核验公开证据发送至 MiniMax-M3.1-Flash 生成条件分析。不会自动降级为离线结果。本空间每日 8 次，全站每日 30 次。
+			258 button 生成传导分析
+		259 container
+			260 text 已真实调用  MiniMax-M3.1-Flash 输入  881  / 输出  581  tokens ·  12.0  秒 运行记录  44be55c8-edbc-492f-bc3f-0a8fb0eac709  · 模型推断仍需复核 02 / 条件传导路径
+			261 heading 特斯拉 · 电芯采购成本下降, Value: 2
+				262 text 特斯拉  ·  电芯采购成本下降
+			263 text 情景研究 · 非确定结论 1
+			264 text 假设
+			265 heading 电芯采购成本下降, Value: 3
+				266 text 电芯采购成本下降
+			267 text 假设其他条件不变，电芯采购成本下降，并分析其向特斯拉发电与储能分部成本、产品及经营结果传导的可能性。
+			268 text 2
+			269 text 推断
+			270 heading 受影响环节, Value: 3
+				271 text 受影响环节
+			272 text 电芯属于储能产品的重要投入，其采购成本下降可能降低Powerwall、Megapack等储能产品的单位成本，并可能改善分部毛利率或利润空间；但公司披露的单位成本下降还受到原材料及制造成本变化共同影响，因此无法将电芯采购成本下降单独量化为单位成本降幅。
+			273 text 业务依据：
+			274 button [tesla-01]
+				275 text [
+				276 text tesla-01
+				277 text ]
+			278 button [tesla-04]
+				279 text [
+				280 text tesla-04
+				281 text ]
+			282 text 3
+			283 text 推断
+			284 heading 公司具体业务, Value: 3
+				285 text 公司具体业务
+			286 text 受影响业务包括面向家庭及小型商业场景的Powerwall，以及面向工商业、公用事业和发电客户的Megapack；这两类业务共同构成公司储能系统业务的客户与应用边界。成本下降的影响可能沿产品制造环节传导，但材料未披露电芯采购成本在总成本中的占比，也未披露成本下降能否完整传导至销售价格或客户。
+			287 text 业务依据：
+			288 button [tesla-01]
+				289 text [
+				290 text tesla-01
+				291 text ]
+			292 button [tesla-04]
+				293 text [
+				294 text tesla-04
+				295 text ]
+			296 text 4
+			297 text 待验证
+			298 heading 财务指标, Value: 3
+				299 text 财务指标
+			300 text 需要跟踪发电与储能分部收入、储能产品部署量、储能产品单位成本、分部毛利率及利润等指标。需要注意，发电与储能分部收入包含发电及储能，不能视为纯储能收入；储能产品部署量属于年度部署量，也不能直接与期末累计部署规模比较。
+			301 text 业务依据：
+			302 button [tesla-02]
+				303 text [
+				304 text tesla-02
+				305 text ]
+			306 button [tesla-03]
+				307 text [
+				308 text tesla-03
+				309 text ]
+			310 button [tesla-04]
+				311 text [
+				312 text tesla-04
+				313 text ]
+			314 heading 成立条件, Value: 3
+				315 text 成立条件
+			316 text 成立条件：电芯采购成本实际下降；原材料、制造成本、售价、产品组合及部署规模等其他条件不发生抵消性变化；成本节约能够传导至公司确认的产品成本。
+			317 heading 反向因素, Value: 3
+				318 text 反向因素
+			319 text 反向因素：较高关税可能抵消原材料及制造成本下降带来的成本改善；售价下降、产品结构变化、部署量变化或其他成本上升也可能削弱电芯采购成本下降对毛利率和利润的传导。 尚缺电芯采购成本及其占总成本的比例、储能产品成本构成、分产品售价与销量、部署量与产品组合、关税影响金额，以及成本变化对分部毛利率和利润的量化敏感性数据；材料也未披露相关软件收入的独立数据。
+			320 button (collapsed) 展开原始业务事实与引用（3）, Secondary Actions: Expand
+				321 text 展开原始业务事实与引用（
+				322 text 3
+				323 text ）
+		226 container
+			227 text 储能研究台  /  每个判断，都应回到证据。 公开资料研究 · 不构成投资建议
+
+The focused UI element is 1 AXWebArea 储能研究台 · 让每个判断都有依据, URL: storage-research-510.green-trout-2026.chatgpt.site/?view=transmission

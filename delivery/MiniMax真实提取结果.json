@@ -1,0 +1,44 @@
+{
+  "verifiedAt": "2026-10-30T15:23:32.711Z",
+  "httpStatus": 200,
+  "input": {
+    "task": "extract",
+    "companyId": "catl",
+    "title": "宁德时代2025年年度报告",
+    "url": "https://www.catl.com/uploads/1/file/public/202603/20260310105829_c5p2l3q9ll.pdf",
+    "publishedAt": "2026-03-10",
+    "period": "2025年度",
+    "locator": "印刷页15 / 储能电池系统及应用场景",
+    "sourceText": "提供电芯、电池柜、储能集装箱以及系统集成等储能解决方案。\n公用事业储能、工商业储能及数据中心储能",
+    "revision": 0
+  },
+  "candidate": {
+    "id": "user-85c15da8-0aaf-43e2-9464-a559d43b30b4",
+    "companyId": "catl",
+    "title": "宁德时代2025年年度报告",
+    "url": "https://www.catl.com/uploads/1/file/public/202603/20260310105829_c5p2l3q9ll.pdf",
+    "publishedAt": "2026-03-10",
+    "period": "2025年度",
+    "locator": "印刷页15 / 储能电池系统及应用场景",
+    "claim": "宁德时代披露提供电芯、电池柜、储能集装箱及系统集成等储能解决方案，覆盖公用事业储能、工商业储能和数据中心储能；材料未披露收入、订单或项目落地进展。",
+    "excerpt": "提供电芯、电池柜、储能集装箱以及系统集成等储能解决方案。公用事业储能、工商业储能及数据中心储能",
+    "sourceType": "用户提供的官方来源摘录",
+    "reviewStatus": "MiniMax提取候选，待用户复核",
+    "imported": true,
+    "retrievedAt": "2026-10-30"
+  },
+  "receipt": {
+    "model": "MiniMax-M3.1-Flash",
+    "provider": "MiniMax",
+    "promptVersion": "minimax-research-v1",
+    "requestId": "0733e9715071f9fa1d04db47b1f3389c",
+    "usage": {
+      "inputTokens": 426,
+      "outputTokens": 218,
+      "totalTokens": 644
+    },
+    "durationMs": 3561,
+    "runId": "c4d92575-79a8-4d2f-9709-d7213fb42f08"
+  },
+  "revision": 0
+}

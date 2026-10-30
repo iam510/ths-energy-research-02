@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T15:13:37.439509+00:00",
+  "generatedAt": "2026-10-30T15:35:05.233997+00:00",
   "root": "02_产业链跨市场与公司研究",
   "files": [
     {
@@ -9,8 +9,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6410,
-      "sha256": "3aeb51dd4c4f0cac8a9e54fb83b161250194246f08c6abed2beffaaa8c487166"
+      "bytes": 6539,
+      "sha256": "4135f94a1552e9384e70fc444b6dea7be0b7c022a5e227b1e5b006b98b17aa07"
     },
     {
       "path": "app/.env.example",
@@ -469,13 +469,13 @@
     },
     {
       "path": "app/lib/ai-contract.ts",
-      "bytes": 4782,
-      "sha256": "82549db0f47ecfc76fec3a364a9ab6e9a89f0c3542d1a3ec88840560b4b79df9"
+      "bytes": 5009,
+      "sha256": "f2fe5684dc67b0a58e5e2b16e3938aa23a14abcc2d994925fb5b8dac1120fc1e"
     },
     {
       "path": "app/lib/ai-service.ts",
-      "bytes": 8711,
-      "sha256": "3bee6842f9fea46b223223ab457441e646593cc4a24e176321c235240b58fb8a"
+      "bytes": 9298,
+      "sha256": "71898c64691698dcc31bd5672aeb585308c5180962d6d36b41e2cad5a443a8c6"
     },
     {
       "path": "app/lib/connector-context.ts",
@@ -515,7 +515,7 @@
     {
       "path": "app/lib/minimax.ts",
       "bytes": 3426,
-      "sha256": "937c126764c96f19785805703999fcd60c743bb8010b06ab901eca9169a5b86a"
+      "sha256": "a0cbd7f644ffa7701c41f974bea1ede6b0efce6e73b3d613191702c7a221a0a9"
     },
     {
       "path": "app/lib/repository.ts",
@@ -693,6 +693,36 @@
       "sha256": "ce9c1d0878535daaab482bbcf1ecf0979f4bf7ac0432b3a3b5da0d1aeedf4820"
     },
     {
+      "path": "delivery/15-MiniMax真实传导成功.png",
+      "bytes": 83124,
+      "sha256": "1495be0118f70a43f8c4efd1b30179bb2300d9ed9e82da6264c60d9fe572a0cb"
+    },
+    {
+      "path": "delivery/16-MiniMax真实比较成功.png",
+      "bytes": 91365,
+      "sha256": "f9d07626a6ab89dc0a5f8cf96846eac6f40c1db0d1b01de03fd31f813e56d2ef"
+    },
+    {
+      "path": "delivery/17-MiniMax真实材料提取.png",
+      "bytes": 66727,
+      "sha256": "0669d101003ecb131e30d4b43abc1b28c1f6171d07ea8f932005847feefe7806"
+    },
+    {
+      "path": "delivery/18-AI候选保存版本.png",
+      "bytes": 73262,
+      "sha256": "a83e982dfcccf9581264786c05e81445e6e042cf36046f4638fc69c48023caea"
+    },
+    {
+      "path": "delivery/19-最终版本真实调用凭证.png",
+      "bytes": 84487,
+      "sha256": "49f64b463b2859cb26248d27ae8b5286f19ee92edb852cb9cfa366a009100031"
+    },
+    {
+      "path": "delivery/20-真实AI视频抽帧检查.png",
+      "bytes": 631183,
+      "sha256": "9754088e4f6713044b031bbfb6d0d343a989860ea65c959d50f607dd8fcbb44e"
+    },
+    {
       "path": "delivery/API测试结果-本地.json",
       "bytes": 2118,
       "sha256": "8f9b4f29ea2fea20d51a009e6ebc6afdcc3a824a294171d1eeda08bb9951d359"
@@ -700,17 +730,47 @@
     {
       "path": "delivery/API测试结果-线上.json",
       "bytes": 2155,
-      "sha256": "6ab90a5441bbc23404b7300520b0f8ecffb682096404ce68848e3359dc6bbab8"
+      "sha256": "dae502434ce33e35c4254d10329ab7b0e6c34c0e5bf1a982e2a7d9b6da6a6a5c"
     },
     {
       "path": "delivery/MiniMax接入验证.json",
-      "bytes": 935,
-      "sha256": "0e43204afa632be40c519ed1494abbb3f78adb63e16f8fef3b565fabf86d721a"
+      "bytes": 2034,
+      "sha256": "6e6f891dea3fcd1c31bbeb77161a67fd8a9779fa23fb6599218084d13a33d576"
+    },
+    {
+      "path": "delivery/MiniMax最终传导页面.txt",
+      "bytes": 6859,
+      "sha256": "9966cd411446d2b8516d8c68568ff1affa5921763458b1834dd20d5c104ed919"
     },
     {
       "path": "delivery/MiniMax模拟与边界测试.txt",
-      "bytes": 1223,
-      "sha256": "f3f5bdd1a22208d99d90c8d65ace5d846eb6100c1d97009962a80828d2d945c2"
+      "bytes": 1445,
+      "sha256": "57607f8c825d898ff1ae5191ac29a92314b86ff26af1d8980de9a10bfbc29b27"
+    },
+    {
+      "path": "delivery/MiniMax比较校验拒绝样例.json",
+      "bytes": 283,
+      "sha256": "b0e31222fd7513f028e66f065b2f3caf59332baf80a6e8f118c76fbcbfcb5f45"
+    },
+    {
+      "path": "delivery/MiniMax真实传导结果.json",
+      "bytes": 3503,
+      "sha256": "c0c0a9a26264997d251308abae9d53f6635d1dad965150bc464c84ebd12f46b9"
+    },
+    {
+      "path": "delivery/MiniMax真实提取结果.json",
+      "bytes": 1894,
+      "sha256": "7230d799df728543f6e9888665fc78d53f6a1393ffcaf96dd823dd3d277829d9"
+    },
+    {
+      "path": "delivery/MiniMax真实比较结果.json",
+      "bytes": 795,
+      "sha256": "3712d559356695329d343ea89e7262904d261136ca7da35a06721b30aa3ba225"
+    },
+    {
+      "path": "delivery/MiniMax真实比较页面.txt",
+      "bytes": 10126,
+      "sha256": "9bc714366a74f83537ad457bc70c2f4f0e84f3650e5df969d906b6b272418803"
     },
     {
       "path": "delivery/screenshots/01-产业链.png",
@@ -774,8 +834,8 @@
     },
     {
       "path": "delivery/全部领域与AI边界测试.txt",
-      "bytes": 2462,
-      "sha256": "ae7eebe1b424590a0777190c66b5d1b895bbee96b673f00db6817c17ea7ed852"
+      "bytes": 2681,
+      "sha256": "9394ca0ea975c5f228763681c208a8e2262b35ddfa1116f199c167d3b026be4c"
     },
     {
       "path": "delivery/响应式检查.json",
@@ -784,18 +844,23 @@
     },
     {
       "path": "delivery/提交清单.md",
-      "bytes": 2065,
-      "sha256": "fe42bce49005cfe0550f7216a276fe34cebe7ec5614606c81a92f93da8f526dd"
+      "bytes": 2257,
+      "sha256": "cee860d30b5c3568709dbca7072e0b4b81074bc11a25c63054f805191c5ed645"
     },
     {
       "path": "delivery/演示脚本.md",
-      "bytes": 995,
-      "sha256": "4355efcd3630ed5f540b357e2a81f88021d835df87a68998baad3e71ba716757"
+      "bytes": 1451,
+      "sha256": "80e62e1a545a77487c653c910fb6965f97803a3486f341216312c5c7994446ab"
     },
     {
       "path": "delivery/演示视频.mp4",
-      "bytes": 862333,
-      "sha256": "1d52399de6c5d30c4225767728b17a28399815aa1432cecd6ae8168fcdd4eda2"
+      "bytes": 915827,
+      "sha256": "1612c176967792610968b7e0e3b3c5907eb2cbe7276ef4a0181670fc7b232e56"
+    },
+    {
+      "path": "delivery/真实AI研究快照.md",
+      "bytes": 12451,
+      "sha256": "6a3eb9784fde86ad07fbb285e5932f62146c2b488f3176750cbdf3ae1a493047"
     },
     {
       "path": "delivery/研究快照样例.md",
@@ -803,9 +868,14 @@
       "sha256": "806c1deefd73576270f5570ce0029c0b5cb2beaa40730d997df7b27555f3473f"
     },
     {
+      "path": "delivery/离线主链路演示.mp4",
+      "bytes": 862333,
+      "sha256": "1d52399de6c5d30c4225767728b17a28399815aa1432cecd6ae8168fcdd4eda2"
+    },
+    {
       "path": "delivery/视频校验.json",
-      "bytes": 240,
-      "sha256": "352975e96af3c17a6f2ccc00f9b250d6771ce0eb02888fec0d126280e5ca9ba1"
+      "bytes": 398,
+      "sha256": "dfd99e4cc7ce1d9a09f51011d0ec5ac7d3c01baf6a9c693e6ac90524d7bfe040"
     },
     {
       "path": "delivery/调用额度测试.json",
@@ -814,8 +884,8 @@
     },
     {
       "path": "delivery/部署验证.json",
-      "bytes": 473,
-      "sha256": "92bbac785402bf39daf50666207e34f7082e0a987d911b1460893cd08e48c308"
+      "bytes": 569,
+      "sha256": "a4ea32aeab6656fbf6b831ee4f1b207863b09c7fcd78aca192f7abcb71c8fd7c"
     },
     {
       "path": "delivery/领域测试结果.txt",
@@ -824,8 +894,8 @@
     },
     {
       "path": "docs/AI使用与验证记录.md",
-      "bytes": 4933,
-      "sha256": "bdb031af5abdd73f4fcc030f86d791bfd6aaf1e653285c3caf7ec14c40d083e1"
+      "bytes": 6585,
+      "sha256": "940e98070df280990314a72066f7df7fcc491042767d7c8ec243f6e91730f839"
     },
     {
       "path": "docs/实现规划.md",
@@ -839,18 +909,18 @@
     },
     {
       "path": "docs/模型接入说明.md",
-      "bytes": 3779,
-      "sha256": "a94e99029f765c55256fa7e56eccb7f3487b6eb2d3f7e05f916d09e5ddd47235"
+      "bytes": 4698,
+      "sha256": "5131290c7bf148c517d4928b934e4aec6403383a1b9a49c81640d6f930626f0d"
     },
     {
       "path": "docs/测试说明.md",
-      "bytes": 7025,
-      "sha256": "0cc7da9ca636c12c9363922eae68cd101da0a667433fabb18d27abc4f0a8cfc5"
+      "bytes": 8677,
+      "sha256": "8ab4410072cdf512cc2900bc2b1e2a1fe056702d134123e847900ca478e59351"
     },
     {
       "path": "docs/部署与交付.md",
-      "bytes": 2342,
-      "sha256": "36a276f6eededf80da763d5cb6eba2d211f47fa6d13da5feee0e076cb80301ad"
+      "bytes": 2440,
+      "sha256": "34acf856a6b6149c3065241f221372d9d26368da656b590b5294bc35a2381a60"
     },
     {
       "path": "docs/题目.md",
@@ -864,8 +934,8 @@
     },
     {
       "path": "scripts/build_demo_video.py",
-      "bytes": 1960,
-      "sha256": "8803fa4339206f9f5d7ee852e9f13baa5a18dfc0f7cebc54038166915b48b78c"
+      "bytes": 1979,
+      "sha256": "75523d0bc6b93c4840cd3f56c01f6dd6456b03f8750ce9ce3fd957a23fbf4407"
     },
     {
       "path": "scripts/minimax-smoke.mjs",
@@ -904,8 +974,8 @@
     },
     {
       "path": "tests/minimax.test.ts",
-      "bytes": 5598,
-      "sha256": "c0de726a9510bbe7a241f057f9eb2d829ecf19d0e26f2e4914a3038d62ba3d66"
+      "bytes": 6368,
+      "sha256": "ddaa30a961b27486a514284d892c9557082ff5ea932636d54c046b1d755e0442"
     },
     {
       "path": "tests/quota_check.py",

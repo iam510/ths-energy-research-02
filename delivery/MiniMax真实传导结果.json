@@ -1,0 +1,81 @@
+{
+  "verifiedAt": "2026-10-30T15:22:48.429Z",
+  "httpStatus": 200,
+  "analysis": {
+    "company": "特斯拉",
+    "scenario": "电芯采购成本下降",
+    "mode": "live",
+    "promptVersion": "minimax-research-v1",
+    "facts": [
+      {
+        "text": "报告将储能产品单位成本下降部分归因于原材料及制造成本下降，同时指出较高关税的抵消作用；这支持成本传导存在条件和反向因素。",
+        "evidenceIds": [
+          "tesla-04"
+        ]
+      },
+      {
+        "text": "Powerwall面向家庭及小型商业场景，Megapack面向工商业、公用事业及发电客户；支持储能系统业务归属。",
+        "evidenceIds": [
+          "tesla-01"
+        ]
+      },
+      {
+        "text": "发电与储能分部收入12,771百万美元，包含发电及储能，不能当作纯储能收入。",
+        "evidenceIds": [
+          "tesla-02"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "kind": "假设",
+        "title": "电芯采购成本下降",
+        "text": "假设其他条件不变，储能系统所用电芯采购成本下降，分析其对发电与储能分部的成本传导边界。",
+        "evidenceIds": []
+      },
+      {
+        "kind": "推断",
+        "title": "受影响环节",
+        "text": "电芯属于储能系统原材料，采购成本下降可能降低单位成本，并可能改善储能产品毛利或经营利润；具体传导取决于电芯成本占系统成本的比例、采购合同传导机制及定价策略。",
+        "evidenceIds": [
+          "tesla-04"
+        ]
+      },
+      {
+        "kind": "推断",
+        "title": "公司具体业务",
+        "text": "传导可能同时影响面向家庭及小型商业场景的Powerwall，以及面向工商业、公用事业和发电客户的Megapack。分部包含太阳能发电与储能，因此不能将分部收入变化直接归因于电芯成本下降。",
+        "evidenceIds": [
+          "tesla-01",
+          "tesla-02"
+        ]
+      },
+      {
+        "kind": "待验证",
+        "title": "财务指标",
+        "text": "需跟踪储能产品单位成本、原材料及制造成本、毛利率、经营利润率、年度部署量、合同定价条款及成本下降向客户传导的情况；不估算增幅。",
+        "evidenceIds": [
+          "tesla-03",
+          "tesla-04"
+        ]
+      }
+    ],
+    "conditions": "在其他条件不变且电芯成本下降能够实际传导至储能系统单位成本的前提下，传导可能首先体现为成本下降，再通过利润改善或价格调整影响业务结果。",
+    "reverse": "材料指出较高关税会抵消原材料及制造成本下降；此外，客户议价、合同定价机制和竞争因素也可能削弱成本下降的利润传导。",
+    "gap": "缺少电芯成本占储能系统成本的比例、采购与销售合同的价格调整机制、关税具体影响、储能业务独立收入及利润数据，以及成本下降在Powerwall和Megapack之间的分摊情况；发电与储能分部收入包含发电，不能作为纯储能收入分析。"
+  },
+  "receipt": {
+    "model": "MiniMax-M3.1-Flash",
+    "provider": "MiniMax",
+    "promptVersion": "minimax-research-v1",
+    "requestId": "0733e9423e9c98b6e592541d28a7d9ee",
+    "usage": {
+      "inputTokens": 800,
+      "outputTokens": 434,
+      "totalTokens": 1234
+    },
+    "durationMs": 7642,
+    "runId": "9797f54e-611b-4eae-8000-53fe43a78715"
+  },
+  "revision": 0
+}

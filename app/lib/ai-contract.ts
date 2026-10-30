@@ -23,16 +23,22 @@ export function parseModelJson(raw:string):unknown {
  if(clean.length>24000)throw new ModelFailure("INVALID_OUTPUT","模型结果超过允许长度，请缩小研究范围。",422);
  try{return JSON.parse(clean);}catch{throw new ModelFailure("INVALID_JSON","模型未返回完整有效的JSON；未使用离线结果替代。请重试。",422);}
 }
+function canonicalNumber(n:string) {
+ const [whole,fraction]=n.replace(/,/g,"").split(".");
+ const integer=whole.replace(/^0+(?=\d)/,"");
+ const decimal=fraction?.replace(/0+$/,"");
+ return decimal?`${integer}.${decimal}`:integer;
+}
 export function checkGrounding(value:unknown,evidence:Evidence[],extraSource="") {
  const all=evidence.map(e=>e.claim+e.period+JSON.stringify(e.metric||{})).join("\n")+extraSource;
- const allowed=new Set((all.match(/\d+(?:[,.]\d+)*/g)||[]).map(n=>n.replace(/,/g,"")));
+ const allowed=new Set((all.match(/\d+(?:[,.]\d+)*/g)||[]).map(canonicalNumber));
  const ids=new Set(evidence.map(e=>e.id));
  function walk(item:unknown,key="") {
   if(Array.isArray(item)){if(key==="evidenceIds"){for(const id of item)if(typeof id!=="string"||!ids.has(id))throw new ModelFailure("INVALID_CITATION","模型引用了未提供的证据，结果未通过校验。",422);}else item.forEach(i=>walk(i));}
   else if(item&&typeof item==="object")Object.entries(item).forEach(([k,v])=>walk(v,k));
   else if(typeof item==="string"&&key!=="evidenceIds"){
    if(/必涨|稳赚|保证收益|目标价|建议买入|建议卖出|推荐买入|推荐卖出/i.test(item))throw new ModelFailure("UNSAFE_OUTPUT","模型结果超出研究边界，已拒绝展示。",422);
-   for(const n of item.match(/\d+(?:[,.]\d+)*/g)||[])if(!allowed.has(n.replace(/,/g,"")))throw new ModelFailure("UNSUPPORTED_NUMBER","模型新增了材料中没有的数字，已拒绝展示。",422);
+   for(const n of item.match(/\d+(?:[,.]\d+)*/g)||[])if(!allowed.has(canonicalNumber(n)))throw new ModelFailure("UNSUPPORTED_NUMBER","模型新增了材料中没有的数字，已拒绝展示。",422);
   }
  }
  walk(value);

@@ -16,7 +16,7 @@ p=subprocess.Popen(cmd,stdin=subprocess.PIPE,stderr=subprocess.PIPE)
 for i,f in enumerate(frames):
  im=Image.open(f['file']).convert('RGB');canvas=Image.new('RGB',(width,height),'#14262d');canvas.paste(im,(0,0));draw=ImageDraw.Draw(canvas)
  draw.text((22,h+16),f['phase'],font=font,fill='#cbe6d6')
- draw.text((22,h+51),'储能研究台 / 真实本地页面分段操作演示 · 离线规则模式 · 无运行时模型调用',font=small,fill='#9bb7ad')
+ draw.text((22,h+51),meta.get('footer','储能研究台 / 真实本地页面分段操作演示 · 离线规则模式 · 无运行时模型调用'),font=small,fill='#9bb7ad')
  draw.rectangle((0,height-4,(i+1)/len(frames)*width,height),fill='#74b393')
  p.stdin.write(canvas.tobytes())
 p.stdin.close();err=p.stderr.read();status=p.wait()

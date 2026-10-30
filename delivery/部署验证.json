@@ -1,12 +1,14 @@
 {
   "url": "https://storage-research-510.green-trout-2026.chatgpt.site",
   "status": "succeeded",
-  "sourceCommit": "bf4986e389fb389cca70e8f531138b4552bb9a63",
-  "versionId": "appgprj_6ae4a0f63ee4819181208452e5f39ee7~appgver_be4a63d9fcf08191893591f630d8b342",
-  "deployedAt": "2026-10-30T14:58:46.336190+00:00",
+  "sourceCommit": "58ce47610d62794c68909e34f8b1181dbd1ce255",
+  "versionId": "appgprj_6ae4a0f63ee4819181208452e5f39ee7~appgver_0178f812a7f08191b68ef944f623f375",
+  "deployedAt": "2026-10-30T15:29:02.927417+00:00",
   "access": "public",
   "runtimeModel": "MiniMax-M3.1-Flash",
   "mode": "live-available",
   "runtimeSecretConfigured": true,
-  "realGenerationVerified": false
+  "realGenerationVerified": true,
+  "deploymentId": "appgdep_6ae4b7ae6f5c8191855bb2b1e8c18383",
+  "runtimeEnvironmentRevision": 2
 }
