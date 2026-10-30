@@ -8,6 +8,13 @@
       "when": 1793369157199,
       "tag": "0000_material_celestials",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1793371586013,
+      "tag": "0001_medical_the_hand",
+      "breakpoints": true
     }
   ]
 }

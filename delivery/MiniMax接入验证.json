@@ -1,0 +1,17 @@
+{
+  "provider": "MiniMax",
+  "model": "MiniMax-M3.1-Flash",
+  "integrationImplemented": true,
+  "serverSecretConfigured": true,
+  "realGenerationSucceeded": false,
+  "lastObservedHttpStatus": 402,
+  "lastObservedCode": "INSUFFICIENT_BALANCE",
+  "status": "等待用户处理计费后完成真实生成验收",
+  "mockModelTestsPassed": 16,
+  "domainTestsPassed": 15,
+  "quotaTestsPassed": 4,
+  "secretValueIncluded": false,
+  "runtimeDeployed": true,
+  "deploymentVersion": "appgprj_6ae4a0f63ee4819181208452e5f39ee7~appgver_be4a63d9fcf08191893591f630d8b342",
+  "sourceCommit": "bf4986e389fb389cca70e8f531138b4552bb9a63"
+}

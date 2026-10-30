@@ -1,0 +1,43 @@
+(node:58532) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ 每条真实证据符合结构、官方来源范围，ID唯一且公司存在 (2.678208ms)
+✔ 储能收入、集团收入与含发电分部不混为一个等级 (0.29025ms)
+✔ 规划不能升级为已实现收入 (0.054625ms)
+✔ 异常来源与自报材料不继承核验信用 (0.055417ms)
+✔ 业务归属由当前版本证据驱动，更新前后可回溯 (0.441666ms)
+✔ 未检得证据不凭静态公司标签生成归属 (0.049708ms)
+✔ 跨市场比较拒绝同一对象，明确财年及业务口径差异 (0.230959ms)
+✔ 不存在共同业务环节时不制造可比性 (0.053917ms)
+✔ 所有公司和情景的引用有效，假设与待验证节点不伪造来源 (0.692625ms)
+✔ 悬空引用被检测 (0.235666ms)
+✔ 缺失证据时保留缺口，无捏造的公司事实 (0.195333ms)
+✔ 官方URL校验拒绝伪装域名、明文协议和内部地址 (0.089875ms)
+✔ 交易承诺和提示词注入不作为业务材料 (0.167916ms)
+✔ 去重忽略段落空白及URL锚点 (0.1065ms)
+✔ 单位转换回原始披露数量 (0.044542ms)
+(node:58533) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ 完整JSON与仅包裹的代码围栏可解析，额外散文拒绝 (0.832833ms)
+✔ 合格条件路径通过，事实不会由模型改写 (1.157541ms)
+✔ 悬空引用拒绝 (0.190166ms)
+✔ 没有依据的推断节点拒绝 (0.090666ms)
+✔ 模型新增材料没有的数字拒绝 (0.152791ms)
+✔ 模型股价承诺拒绝 (0.080916ms)
+✔ 缺少必要边界字段拒绝 (0.265125ms)
+✔ 业务比较必须有依据及不可比项 (0.080291ms)
+✔ 伪造的比较引用拒绝 (0.271541ms)
+✔ 提取只能引用实际提交的连续文本 (0.306458ms)
+✔ 提取不能发明新数字 (0.118292ms)
+✔ 余额、鉴权、限流和模型权限错误有明确分类 (0.08075ms)
+✔ 未配置密钥不发出外部请求 (0.144916ms)
+✔ 官方SDK请求参数、JSON解析及usage正确（模拟传输） (19.65875ms)
+✔ HTTP200业务错误不是成功，且不返回原始请求信息 (1.516ms)
+✔ 超时明确504 (1.03425ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 203.475875

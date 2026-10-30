@@ -1,8 +1,9 @@
 import {versions,save,updateExample} from "@/lib/repository";
 import {updateSchema,fingerprint,blockedRequest} from "@/lib/validation";
 import {json,workspace,sameOrigin,readBody} from "@/lib/http";
+import {aiConfiguration} from "@/lib/ai-service";
 export const dynamic="force-dynamic";
-export async function GET(request:Request) {try {return json({versions:await versions(workspace(request)),example:updateExample,mode:"offline",asOf:"2026-10-30",classificationVersion:"storage-v1"});}catch {return json({error:"无法读取研究版本；持久存储暂不可用。请重试，不会自动覆盖历史数据。"},503);}}
+export async function GET(request:Request) {try {return json({versions:await versions(workspace(request)),example:updateExample,mode:aiConfiguration().configured?"live-available":"offline",ai:aiConfiguration(),asOf:"2026-10-30",classificationVersion:"storage-v1"});}catch {return json({error:"无法读取研究版本；持久存储暂不可用。请重试，不会自动覆盖历史数据。"},503);}}
 export async function POST(request:Request) {
  if(!sameOrigin(request)) return json({error:"仅接受同源提交"},403);
  try {

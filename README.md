@@ -2,7 +2,7 @@
 
 第二题：产业链、跨市场与公司研究。面向需要判断“公司到底做什么、业务能否比较、变化如何传导”的投资研究者，以公开披露为依据，完成产业分层、证据核对、跨市场比较、条件传导和版本更新。
 
-当前交付为用户确认的**离线可用版本**：网页和更新服务可实际操作；研究解释由核验材料与确定性规则生成，**没有调用实时大模型**，也没有冒充扶摇/iFinD实时数据。
+当前版本已加入 **MiniMax API 接入**：变化传导、公司可比性解释、公开材料候选提取使用服务端MiniMax；离线规则可手动选择。当前真实调用返回HTTP 402，用户正在处理计费状态；尚未把真实生成标记为成功。扶摇/iFinD仍未接入。
 
 - 在线产品：[储能研究台](https://storage-research-510.green-trout-2026.chatgpt.site)（发布状态及线上验收见交付记录）
 - 源码仓库：[iam510/ths-energy-research-02](https://github.com/iam510/ths-energy-research-02)（推送状态见交付记录）
@@ -14,7 +14,7 @@
 1. 产业链页面点击业务环节筛选公司，打开公司证据，沿来源链接核对原文。
 2. 对照阳光电源与Tesla，查看业务相似点及“纯储能/含发电分部”差异；可切换Fluence查看财年差异。
 3. 选择公司和情景，生成有引用的传导分析，检查假设、条件、反向因素和信息缺口。
-4. 更新中心载入官方示例，检查出处、提取候选、确认保存；证据从23条变为24条，Tesla新增“运营及服务”归属。
+4. 更新中心可粘贴官方材料文本并调用MiniMax提取候选，经复核后保存；也可载入已核验示例体验23→24条证据、Tesla服务归属变化。
 5. 查看v0和v1；刷新页面或服务重启后版本仍保留。示例是旧材料新增入库，不是今日新公告。
 
 每位访客的演示空间通过随机的HttpOnly Cookie隔离，版本保存在服务端D1。公共种子数据不可由访客覆盖。清除Cookie后不会自动找回此前匿名空间。本产品不包含账户恢复或生产级配额系统。
@@ -28,10 +28,11 @@ cd app
 npm ci
 npm run build
 node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0000_material_celestials.sql
+node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0001_medical_the_hand.sql
 npm run dev -- --port 5173 --hostname 127.0.0.1
 ```
 
-打开终端打印的地址。迁移命令用于全新本地数据库，不要对已迁移的数据库重复执行原SQL。`npm start`可预览构建后的Worker。无需API Key即可使用当前离线版本。
+打开终端打印的地址。迁移命令用于全新本地数据库，不要对已迁移的数据库重复执行原SQL。`npm start`可预览构建后的Worker。无需API Key即可使用离线规则；真实模型需按`.env.example`配置服务端密钥。余额或额度不足时明确报错。
 
 ## 技术与源码
 
@@ -50,13 +51,15 @@ npm run dev -- --port 5173 --hostname 127.0.0.1
 
 开发过程使用Codex参与资料读取、代码和规则编写，并通过测试与浏览器验证；`source-checked`表示AI读取源文核对，不代表候选人已逐条人工签字。详见[AI使用与验证记录](docs/AI使用与验证记录.md)。
 
-运行时离线模式不调用模型。业务分层、可信度表达、数值单位换算、引用检查与版本控制由可审计代码负责；传导解释使用预设条件规则。`/api/analyze`预留模式参数，实时模式返回明确503，不会静默伪装成在线模型。真实模型提取、自由文本问答及实时检索仍待接入，详见[模型接入说明](docs/模型接入说明.md)。
+真实模式使用MiniMax官方AI SDK Provider、`MiniMax-M3.1-Flash`和服务端secret。模型生成结构化条件传导、可比性解释及候选材料；代码校验JSON、来源引用和新增数字，确定性业务事实不交由模型改写。运行记录包含模型、提示词版本、请求ID、token用量及状态。默认全站每日30次、单空间每日8次、每分钟6次；45秒超时、不自动重试，不静默使用离线文本代替失败的模型调用。
+
+当前首次真实请求返回HTTP 402，成功生成链路尚待计费恢复后验收。模拟测试与真实调用记录明确分开。配置方法、校验边界及错误处理见[模型接入说明](docs/模型接入说明.md)。
 
 资料主要为2025年度公开披露，核验日期2026-10-30，不保证已覆盖2026年全部增量公告。关键数字保留来源、原文位置、报告期、单位和币种；Tesla的发电与储能合并收入不能等同纯储能收入，LG合并收入不能替代ESS收入，Fluence财年与自然年不同。所有指标不直接跨币种排名；未披露数据不估填。详见[数据口径与来源](docs/数据口径与来源.md)。
 
 ## 已知边界与未做事项
 
-- 尚未接入扶摇/iFinD及真实模型；离线版本不能视为已经完成原题“运行时AI”能力。
+- 已实现MiniMax接入，但真实生成当前受HTTP 402阻塞；不能视为真实模型成功验收。扶摇/iFinD仍未接入。
 - 持续更新当前为有复核的材料导入与版本更新，未做无人值守定时抓取；自定义材料始终标记未经独立核验，不自动升级归属。
 - 不提供股价预测、目标价、交易指令或收益承诺。传导分析是有条件的研究推断，不是因果验证或投资建议。
 - 未覆盖全行业、客户/供应商图谱、估值模型和全部2026年公告。未部署生产级账户、空间恢复、计费、反滥用配额及数据保留清理策略；当前是笔试研究原型。
@@ -64,7 +67,8 @@ npm run dev -- --port 5173 --hostname 127.0.0.1
 ## 验证与打包
 
 ```sh
-node --experimental-strip-types --test tests/domain.test.ts
+node --experimental-strip-types --test tests/domain.test.ts tests/minimax.test.ts
+python3 tests/quota_check.py
 node tests/api-check.mjs http://127.0.0.1:5173
 python3 scripts/package_submission.py
 ```

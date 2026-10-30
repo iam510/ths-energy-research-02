@@ -1,0 +1,22 @@
+{
+  "fixtureOnly": true,
+  "modelCalls": 0,
+  "results": [
+    {
+      "case": "每分钟全站最多6次",
+      "status": "passed"
+    },
+    {
+      "case": "同一空间每日最多8次",
+      "status": "passed"
+    },
+    {
+      "case": "全站日上限不能用新空间绕过",
+      "status": "passed"
+    },
+    {
+      "case": "20个并发申请不超全站5次测试配额",
+      "status": "passed"
+    }
+  ]
+}

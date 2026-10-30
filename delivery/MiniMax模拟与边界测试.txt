@@ -1,0 +1,26 @@
+(node:58183) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ 完整JSON与仅包裹的代码围栏可解析，额外散文拒绝 (0.871917ms)
+✔ 合格条件路径通过，事实不会由模型改写 (1.204375ms)
+✔ 悬空引用拒绝 (0.202125ms)
+✔ 没有依据的推断节点拒绝 (0.081333ms)
+✔ 模型新增材料没有的数字拒绝 (0.137459ms)
+✔ 模型股价承诺拒绝 (0.07425ms)
+✔ 缺少必要边界字段拒绝 (0.250292ms)
+✔ 业务比较必须有依据及不可比项 (0.077ms)
+✔ 伪造的比较引用拒绝 (0.246333ms)
+✔ 提取只能引用实际提交的连续文本 (0.299666ms)
+✔ 提取不能发明新数字 (0.110917ms)
+✔ 余额、鉴权、限流和模型权限错误有明确分类 (0.073417ms)
+✔ 未配置密钥不发出外部请求 (0.136042ms)
+✔ 官方SDK请求参数、JSON解析及usage正确（模拟传输） (19.0355ms)
+✔ HTTP200业务错误不是成功，且不返回原始请求信息 (1.250167ms)
+✔ 超时明确504 (0.90175ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 186.959208
