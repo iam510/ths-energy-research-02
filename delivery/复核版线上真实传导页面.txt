@@ -1,0 +1,128 @@
+Browser tab: 1683859296, Title: "储能研究台 · 让每个判断都有依据", URL: "https://storage-research-510.green-trout-2026.chatgpt.site/?view=transmission".
+1 AXWebArea 储能研究台 · 让每个判断都有依据, URL: storage-research-510.green-trout-2026.chatgpt.site/?view=transmission
+	2 container
+		3 link Description: 储能研究台 ENERGY INTELLIGENCE, Value: storage-research-510.green-trout-2026.chatgpt.site/?view=chain
+		4 text 研究工作台 01
+		5 container 主导航
+			6 button 产业链研究
+			7 button 中外公司对照
+			8 button 变化传导
+			9 button 更新与复核
+		10 text 当前研究专题
+		11 heading 电化学储能, Value: 3
+			12 text 电化学储能
+		13 container
+			14 text 从业务事实出发，
+			15 text 追踪产业变化。
+		16 text 公开披露研究样本 事实有出处，推断有边界 研究信息 · 非投资建议
+	17 container
+		18 text 研究工作台 变化传导 MiniMax 已配置
+		19 button 导出研究
+	20 container main-content
+		21 text INDUSTRY RESEARCH / 研究专题 001
+		22 heading 变化如何传导，判断如何成立。, Value: 1
+			23 text 变化如何传导，判断如何成立。
+		24 text 沿着业务路径分析可能影响，明确生效条件与反向因素。
+		25 text 公开资料快照
+		26 text 资料核验 2026.10.30
+		27 text 主要为 2025 年度披露
+		360 container
+			361 text AI演示额度 今日本空间剩余 5 次，全站剩余 27 次。 下次日额度恢复：2026/11/1 00:00:00（北京时间） 失败调用也计数；另受每分钟与MiniMax订阅窗口限制。
+			362 button 刷新剩余额度
+			363 button 查看历史真实调用样例
+		364 container
+			365 text 01 / 定义研究情景
+			366 heading 从一个外部变化开始, Value: 2
+				367 text 从一个外部变化开始
+			368 text 以下均为假设，不表示事件已发生。 研究方式
+			369 pop up button (collapsed, settable) Description: 研究方式, Value: MiniMax AI 分析, Secondary Actions: Expand
+				370 menu
+					371 (selected) MiniMax AI 分析
+					372 离线规则
+			373 container 选择变化
+				374 text 选择变化
+				375 container
+					376 radio button (settable, integer) Description: 电芯采购成本下降 情景假设, Value: 1
+					377 text 电芯采购成本下降 情景假设
+				378 container
+					379 radio button (settable, integer) Description: 海外贸易成本上升 情景假设, Value: 0
+					380 text 海外贸易成本上升 情景假设
+				381 container
+					382 radio button (settable, integer) Description: 下游储能需求增长 情景假设, Value: 0
+					383 text 下游储能需求增长 情景假设
+			384 text 分析公司
+			385 pop up button (collapsed, settable) 分析公司, Value: 特斯拉, Secondary Actions: Expand
+				386 menu
+					387 宁德时代
+					388 亿纬锂能
+					389 阳光电源
+					390 (selected) 特斯拉
+					391 Fluence
+					392 LG 新能源
+			393 text 将当前版本生效材料发送至 MiniMax-M3.1-Flash 生成条件分析。不会自动降级为离线结果。本空间每日 8 次，全站每日 30 次。
+			394 button 生成传导分析
+		395 container
+			396 text 已真实调用  MiniMax-M3.1-Flash 输入  1120  / 输出  543  tokens ·  5.4  秒 运行记录  1804968a-cf32-4ff3-8e27-e91b264789e6  · 模型推断仍需复核 02 / 条件传导路径
+			397 heading 特斯拉 · 电芯采购成本下降, Value: 2
+				398 text 特斯拉  ·  电芯采购成本下降
+			399 text 情景研究 · 非确定结论 1
+			400 text 假设
+			401 heading 电芯采购成本下降, Value: 3
+				402 text 电芯采购成本下降
+			403 text 假设电芯采购成本下降，且其他条件不变，分析成本下降在发电与储能分部的传导边界。
+			404 text 2
+			405 text 推断
+			406 heading 受影响环节, Value: 3
+				407 text 受影响环节
+			408 text 电芯是储能系统的主要物料，若采购成本下降，可能沿电芯—储能系统制造—系统售价/毛利的路径传导；报告已将储能产品单位成本下降部分归因于原材料及制造成本下降，说明该环节具备成本敏感度，但同一报告亦指出较高关税对成本下降形成抵消，因此传导并非无条件成立。
+			409 text 业务依据：
+			410 button [tesla-04]
+				411 text [
+				412 text tesla-04
+				413 text ]
+			414 text 3
+			415 text 推断
+			416 heading 公司具体业务, Value: 3
+				417 text 公司具体业务
+			418 text 传导落点是Powerwall（家庭及小型商业场景）与Megapack（工商业、公用事业及发电客户）两类储能系统，可能体现为系统单位成本下降；对发电侧业务的影响受分部口径限制，发电与储能分部收入包含发电及储能，不能拆分为纯储能口径，故电芯成本变化对分部收入与盈利的影响需在含发电的合并口径下评估。
+			419 text 业务依据：
+			420 button [tesla-01]
+				421 text [
+				422 text tesla-01
+				423 text ]
+			424 button [tesla-02]
+				425 text [
+				426 text tesla-02
+				427 text ]
+			428 text 4
+			429 text 待验证
+			430 heading 财务指标, Value: 3
+				431 text 财务指标
+			432 text 需跟踪发电与储能分部收入与毛利（分部口径含发电）、储能系统单位成本与售价、以及年度储能部署量的变化方向；材料未披露电芯成本占比、单位成本降幅或分部毛利率的具体数值，故不估算增幅。
+			433 text 业务依据：
+			434 button [tesla-02]
+				435 text [
+				436 text tesla-02
+				437 text ]
+			438 button [tesla-03]
+				439 text [
+				440 text tesla-03
+				441 text ]
+			442 button [tesla-04]
+				443 text [
+				444 text tesla-04
+				445 text ]
+			446 heading 成立条件, Value: 3
+				447 text 成立条件
+			448 text 传导成立需同时满足：电芯采购价格确实下降、降幅未被关税等成本项抵消、且合同定价与产品结构未同步下移导致成本改善无法留存；以上条件在材料中仅部分获得支持（成本下降与关税抵消并存），其余条件无材料佐证。
+			449 heading 反向因素, Value: 3
+				450 text 反向因素
+			451 text 较高关税可抵消原材料及制造成本下降，构成反向因素；此外合同定价、产品结构（Powerwall与Megapack占比）及部署量变动也可能削弱成本下降的利润传导（方向性推断，材料未量化）。 缺少电芯成本占储能系统成本比重、单位成本降幅与售价降幅的对应关系、分部内发电与储能收入与毛利的拆分、关税对单位成本影响幅度、以及Autobidder与Powerhub是否单独计价或与系统绑定；Autobidder用于Megapack、Powerhub用于分布式能源的实时控制与优化仅支持软件/服务业务归属，未披露单独收入，且该材料为个人复核生效、未经独立核验。
+			452 button (collapsed) 展开原始业务事实与引用（3）, Secondary Actions: Expand
+				453 text 展开原始业务事实与引用（
+				454 text 3
+				455 text ）
+		358 container
+			359 text 储能研究台  /  每个判断，都应回到证据。 公开资料研究 · 不构成投资建议
+
+The focused UI element is 1 AXWebArea 储能研究台 · 让每个判断都有依据, URL: storage-research-510.green-trout-2026.chatgpt.site/?view=transmission

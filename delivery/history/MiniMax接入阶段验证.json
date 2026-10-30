@@ -1,0 +1,58 @@
+{
+  "provider": "MiniMax",
+  "model": "MiniMax-M3.1-Flash",
+  "integrationImplemented": true,
+  "serverSecretConfigured": true,
+  "realGenerationSucceeded": true,
+  "lastObservedHttpStatus": 200,
+  "lastObservedCode": null,
+  "status": "订阅Key替换完成；三个AI入口真实返回，候选保存及刷新验收通过；语义仍需复核",
+  "mockModelTestsPassed": 19,
+  "domainTestsPassed": 15,
+  "quotaTestsPassed": 4,
+  "secretValueIncluded": false,
+  "runtimeDeployed": true,
+  "deploymentVersion": "appgprj_6ae4a0f63ee4819181208452e5f39ee7~appgver_0178f812a7f08191b68ef944f623f375",
+  "sourceCommit": "58ce47610d62794c68909e34f8b1181dbd1ce255",
+  "lastRecheckedAt": "2026-10-30T15:33:42.494885+00:00",
+  "directSmokeHttpStatus": 402,
+  "hostedBrowserResult": "MiniMax账户余额不足，未完成模型调用。",
+  "offlineFallbackVerified": true,
+  "recheckEvidence": [
+    "15-MiniMax真实传导成功.png",
+    "16-MiniMax真实比较成功.png",
+    "17-MiniMax真实材料提取.png",
+    "18-AI候选保存版本.png",
+    "19-最终版本真实调用凭证.png",
+    "真实AI研究快照.md"
+  ],
+  "keyKind": "M Plan subscription; value excluded",
+  "runtimeEnvironmentRevision": 2,
+  "promptVersion": "minimax-research-v3",
+  "historicalFailures": [
+    "按量Key HTTP402",
+    "公司比较超出条目上限被拒绝",
+    "公司比较新增数字校验拒绝"
+  ],
+  "browserRuns": [
+    {
+      "task": "transmission",
+      "runId": "44be55c8-edbc-492f-bc3f-0a8fb0eac709",
+      "inputTokens": 881,
+      "outputTokens": 581
+    },
+    {
+      "task": "compare",
+      "runId": "a3a60ac5-a1e4-4699-b371-9730f03d2324",
+      "inputTokens": 1375,
+      "outputTokens": 702
+    },
+    {
+      "task": "extract",
+      "runId": "5e256155-fe1b-4a70-a984-47636facf57b",
+      "inputTokens": 426,
+      "outputTokens": 144
+    }
+  ],
+  "semanticReviewLimitation": "模型比较曾将行业毛利率称为分产品毛利率，仍需人工回看原文，不把结构/引用校验当作语义事实认证。"
+}

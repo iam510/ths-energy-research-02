@@ -12,7 +12,12 @@
     "sourceType": "annual-report",
     "reviewStatus": "source-checked",
     "retrievedAt": "2026-10-30",
-    "timeAnomaly": false
+    "timeAnomaly": false,
+    "stageIds": [
+      "cell",
+      "system"
+    ],
+    "progress": "product"
   },
   {
     "id": "catl-02",
@@ -34,7 +39,12 @@
       "unit": "亿元",
       "currency": "CNY",
       "scope": "储能电池系统；原表单位千元"
-    }
+    },
+    "stageIds": [
+      "cell",
+      "system"
+    ],
+    "progress": "revenue"
   },
   {
     "id": "catl-03",
@@ -55,7 +65,9 @@
       "value": 26.71,
       "unit": "%",
       "scope": "储能电池系统"
-    }
+    },
+    "stageIds": [],
+    "progress": "context"
   },
   {
     "id": "catl-04",
@@ -70,7 +82,12 @@
     "sourceType": "annual-report",
     "reviewStatus": "source-checked",
     "retrievedAt": "2026-10-30",
-    "timeAnomaly": false
+    "timeAnomaly": false,
+    "stageIds": [
+      "cell",
+      "system"
+    ],
+    "progress": "product"
   },
   {
     "id": "eve-01",
@@ -86,7 +103,11 @@
     "reviewStatus": "source-checked",
     "retrievedAt": "2026-10-30",
     "timeAnomaly": false,
-    "notes": "官网未标发布日期；页面参数不等于2025年度销售。"
+    "notes": "官网未标发布日期；页面参数不等于2025年度销售。",
+    "stageIds": [
+      "system"
+    ],
+    "progress": "product"
   },
   {
     "id": "eve-02",
@@ -101,7 +122,11 @@
     "sourceType": "official-product",
     "reviewStatus": "source-checked",
     "retrievedAt": "2026-10-30",
-    "timeAnomaly": false
+    "timeAnomaly": false,
+    "stageIds": [
+      "cell"
+    ],
+    "progress": "product"
   },
   {
     "id": "eve-03",
@@ -116,7 +141,11 @@
     "sourceType": "official-product",
     "reviewStatus": "source-checked",
     "retrievedAt": "2026-10-30",
-    "timeAnomaly": false
+    "timeAnomaly": false,
+    "stageIds": [
+      "cell"
+    ],
+    "progress": "product"
   },
   {
     "id": "sungrow-01",
@@ -139,7 +168,11 @@
       "currency": "CNY",
       "scope": "储能系统分产品收入"
     },
-    "notes": "已用中文正式披露替换英文版：公告编号2026-008，封面2026年3月，公司IR列表及巨潮文件日期2026-04-01。"
+    "notes": "已用中文正式披露替换英文版：公告编号2026-008，封面2026年3月，公司IR列表及巨潮文件日期2026-04-01。",
+    "stageIds": [
+      "system"
+    ],
+    "progress": "revenue"
   },
   {
     "id": "sungrow-02",
@@ -156,12 +189,14 @@
     "retrievedAt": "2026-10-30",
     "timeAnomaly": false,
     "metric": {
-      "label": "储能行业毛利率",
+      "label": "储能系统毛利率",
       "value": 36.49,
       "unit": "%",
-      "scope": "储能行业"
+      "scope": "储能系统分产品；与储能行业行一致"
     },
-    "notes": "已用中文正式披露替换英文版：公告编号2026-008，封面2026年3月，公司IR列表及巨潮文件日期2026-04-01。"
+    "notes": "已用中文正式披露替换英文版：公告编号2026-008，封面2026年3月，公司IR列表及巨潮文件日期2026-04-01。",
+    "stageIds": [],
+    "progress": "context"
   },
   {
     "id": "sungrow-03",
@@ -177,7 +212,12 @@
     "reviewStatus": "source-checked",
     "retrievedAt": "2026-10-30",
     "timeAnomaly": false,
-    "notes": "已用中文正式披露替换英文版：公告编号2026-008，封面2026年3月，公司IR列表及巨潮文件日期2026-04-01。"
+    "notes": "已用中文正式披露替换英文版：公告编号2026-008，封面2026年3月，公司IR列表及巨潮文件日期2026-04-01。",
+    "stageIds": [
+      "pcs",
+      "system"
+    ],
+    "progress": "product"
   },
   {
     "id": "sungrow-04",
@@ -193,7 +233,11 @@
     "reviewStatus": "source-checked",
     "retrievedAt": "2026-10-30",
     "timeAnomaly": false,
-    "notes": "已用中文正式披露替换英文版：公告编号2026-008，封面2026年3月，公司IR列表及巨潮文件日期2026-04-01。"
+    "notes": "已用中文正式披露替换英文版：公告编号2026-008，封面2026年3月，公司IR列表及巨潮文件日期2026-04-01。",
+    "stageIds": [
+      "pcs"
+    ],
+    "progress": "product"
   },
   {
     "id": "tesla-01",
@@ -208,7 +252,11 @@
     "sourceType": "annual-report",
     "reviewStatus": "source-checked",
     "retrievedAt": "2026-10-30",
-    "timeAnomaly": false
+    "timeAnomaly": false,
+    "stageIds": [
+      "system"
+    ],
+    "progress": "product"
   },
   {
     "id": "tesla-02",
@@ -230,7 +278,9 @@
       "unit": "亿美元",
       "currency": "USD",
       "scope": "Energy generation and storage；含发电"
-    }
+    },
+    "stageIds": [],
+    "progress": "context"
   },
   {
     "id": "tesla-03",
@@ -251,7 +301,11 @@
       "value": 46.7,
       "unit": "GWh",
       "scope": "2025年度energy storage products deployed"
-    }
+    },
+    "stageIds": [
+      "system"
+    ],
+    "progress": "product"
   },
   {
     "id": "tesla-04",
@@ -266,7 +320,9 @@
     "sourceType": "annual-report",
     "reviewStatus": "source-checked",
     "retrievedAt": "2026-10-30",
-    "timeAnomaly": false
+    "timeAnomaly": false,
+    "stageIds": [],
+    "progress": "context"
   },
   {
     "id": "fluence-01",
@@ -288,7 +344,11 @@
       "unit": "亿美元",
       "currency": "USD",
       "scope": "energy storage products and solutions"
-    }
+    },
+    "stageIds": [
+      "system"
+    ],
+    "progress": "revenue"
   },
   {
     "id": "fluence-02",
@@ -310,7 +370,11 @@
       "unit": "亿美元",
       "currency": "USD",
       "scope": "services；不含digital applications"
-    }
+    },
+    "stageIds": [
+      "service"
+    ],
+    "progress": "revenue"
   },
   {
     "id": "fluence-03",
@@ -325,7 +389,9 @@
     "sourceType": "annual-report",
     "reviewStatus": "source-checked",
     "retrievedAt": "2026-10-30",
-    "timeAnomaly": false
+    "timeAnomaly": false,
+    "stageIds": [],
+    "progress": "context"
   },
   {
     "id": "fluence-04",
@@ -346,7 +412,11 @@
       "value": 17.8,
       "unit": "GWh",
       "scope": "期末累计；substantial completion and not decommissioned"
-    }
+    },
+    "stageIds": [
+      "system"
+    ],
+    "progress": "product"
   },
   {
     "id": "lg-01",
@@ -368,7 +438,9 @@
       "unit": "万亿韩元",
       "currency": "KRW",
       "scope": "合并全公司；非ESS分部"
-    }
+    },
+    "stageIds": [],
+    "progress": "context"
   },
   {
     "id": "lg-02",
@@ -383,7 +455,11 @@
     "sourceType": "official-results",
     "reviewStatus": "source-checked",
     "retrievedAt": "2026-10-30",
-    "timeAnomaly": false
+    "timeAnomaly": false,
+    "stageIds": [
+      "cell"
+    ],
+    "progress": "product"
   },
   {
     "id": "lg-03",
@@ -399,7 +475,11 @@
     "reviewStatus": "source-checked",
     "retrievedAt": "2026-10-30",
     "timeAnomaly": false,
-    "notes": "未来目标单独标识；后续结果未核验。"
+    "notes": "未来目标单独标识；后续结果未核验。",
+    "stageIds": [
+      "cell"
+    ],
+    "progress": "plan"
   },
   {
     "id": "tesla-05",
@@ -409,13 +489,17 @@
     "publishedAt": "2026-01-29",
     "period": "2025年度；截至2025-12-31",
     "locator": "Item 1 / Energy Storage Products / Autobidder and Powerhub",
-    "excerpt": "",
+    "excerpt": "Autobidder",
     "claim": "公司披露Autobidder用于Megapack、Powerhub用于分布式能源的实时控制与优化，可支持储能调度软件/服务业务归属；不能据此断言其拥有或运营全部相关电站资产，也未披露这两款软件单独收入。",
     "sourceType": "annual-report",
     "reviewStatus": "source-checked",
     "retrievedAt": "2026-10-30",
     "timeAnomaly": false,
-    "notes": "可作为新增至本研究库的真实旧材料示例；来源发布日期保持2026-01-29，不伪装成2026-10-30新公告。"
+    "notes": "可作为新增至本研究库的真实旧材料示例；来源发布日期保持2026-01-29，不伪装成2026-10-30新公告。",
+    "stageIds": [
+      "service"
+    ],
+    "progress": "product"
   },
   {
     "id": "lg-04",
@@ -431,6 +515,11 @@
     "reviewStatus": "source-checked",
     "retrievedAt": "2026-10-30",
     "timeAnomaly": false,
-    "notes": "页面未标发布日期；其11GWh数据混合已安装、建设中和签约中项目，不作为已交付量收录。"
+    "notes": "页面未标发布日期；其11GWh数据混合已安装、建设中和签约中项目，不作为已交付量收录。",
+    "stageIds": [
+      "system",
+      "service"
+    ],
+    "progress": "product"
   }
 ]

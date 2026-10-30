@@ -1,0 +1,75 @@
+{
+  "verifiedAt": "2026-10-30T16:18:09.029050+00:00",
+  "sourceCommit": "a750eb1d6cb9979bdb5dc98662d8347afd6abdbd",
+  "versionId": "appgprj_6ae4a0f63ee4819181208452e5f39ee7~appgver_335ccf36f93c8191a05d6b4c721173a3",
+  "deploymentId": "appgdep_6ae4c153e87c8191a6086fd13557542e",
+  "tests": {
+    "domainModelReview": 47,
+    "localApi": 22,
+    "hostedApi": 22,
+    "quotaSql": 4
+  },
+  "browserFlow": {
+    "initial": {
+      "revision": 0,
+      "teslaService": "本资料范围未检得"
+    },
+    "candidate": {
+      "revision": 1,
+      "effective": false
+    },
+    "adopted": {
+      "revision": 2,
+      "teslaService": "产品 / 交付等证据",
+      "trust": "个人复核，未经独立核验"
+    },
+    "withdrawn": {
+      "revision": 3,
+      "teslaService": "本资料范围未检得"
+    },
+    "refreshRetainedRevisions": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "historicalViewReadOnly": true,
+    "publicSeedUnchanged": true
+  },
+  "liveRuns": [
+    {
+      "task": "transmission",
+      "runId": "1804968a-cf32-4ff3-8e27-e91b264789e6",
+      "inputTokens": 1120,
+      "outputTokens": 543,
+      "discussedAdoptedMaterial": true
+    },
+    {
+      "task": "compare",
+      "runId": "26e8aaf4-6e0c-4ed5-9fb6-0c30c5896319",
+      "inputTokens": 1694,
+      "outputTokens": 837,
+      "bothCompanyCitations": true,
+      "personalMaterialReferenced": true,
+      "partialRemovalObserved": false
+    }
+  ],
+  "responsive": [
+    {
+      "page": "chain",
+      "viewport": 375,
+      "documentWidth": 375
+    },
+    {
+      "page": "updates",
+      "viewport": 375,
+      "documentWidth": 375
+    }
+  ],
+  "video": {
+    "seconds": 100,
+    "decodedFrames": 200,
+    "method": "真实公开页面分段截图采样，未伪造状态"
+  },
+  "sourceVerificationCaveat": "来源核对及表单操作由Codex执行，不代表候选人逐条人工签字；个人复核不等于独立源文认证。"
+}

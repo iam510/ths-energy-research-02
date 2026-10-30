@@ -1,17 +1,17 @@
 {
   "file": "演示视频.mp4",
-  "durationSeconds": 104.0,
-  "width": 1280,
-  "height": 812,
+  "durationSeconds": 100.0,
+  "width": 1414,
+  "height": 934,
   "fps": 2,
-  "frames": 208,
-  "bytes": 915827,
+  "frames": 200,
+  "bytes": 1572449,
   "method": "CUA实际页面屏幕采样分段录制，添加说明字幕，未伪造UI状态。",
-  "decodedFrames": 208,
-  "decodedDurationSeconds": 104.0,
+  "decodedFrames": 200,
+  "decodedDurationSeconds": 100.0,
   "decodedSize": [
-    1280,
-    812
+    1414,
+    934
   ],
-  "contactSheet": "20-真实AI视频抽帧检查.png"
+  "contactSheet": "28-完整更新演示抽帧检查.png"
 }

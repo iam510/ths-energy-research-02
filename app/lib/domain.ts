@@ -1,5 +1,5 @@
 export type Metric = {label:string;value:number;unit:string;currency?:string;scope:string};
-export type Evidence = {id:string;companyId:string;title:string;url:string;publishedAt:string|null;period:string;locator:string;excerpt:string;claim:string;sourceType:string;reviewStatus:string;metric?:Metric;imported?:boolean;kind?:string;retrievedAt?:string;timeAnomaly?:boolean;notes?:string};
+export type Evidence = {id:string;companyId:string;title:string;url:string;publishedAt:string|null;period:string;locator:string;excerpt:string;claim:string;sourceType:string;reviewStatus:string;metric?:Metric;imported?:boolean;kind?:string;retrievedAt?:string;timeAnomaly?:boolean;notes?:string;stageIds?:string[];progress?:"revenue"|"product"|"plan"|"context";researchState?:"candidate"|"adopted"|"withdrawn";review?:{at:string;reason:string;excerpt:string;sourceConfirmed:boolean}};
 export const stages = [
  {id:"cell",name:"电芯与电池系统",en:"BATTERY",description:"储存电能的核心载体",boundary:"包含储能电芯、电池模组与电池系统；不将动力电池收入计为储能。"},
  {id:"pcs",name:"变流与控制",en:"CONVERSION",description:"连接电池与电网",boundary:"PCS、电力电子与能量管理；有集成产品不代表单独披露 PCS 收入。"},
@@ -20,18 +20,27 @@ export const scenarios = [
  {id:"demand",name:"下游储能需求增长",type:"情景假设",hint:"需求增长不等于所有公司收入和利润同步增长。",stage:"项目需求 → 订单 → 交付",metric:"订单 / 收入 / 应收账款",mechanism:"符合客户技术和地区准入要求的供应商，可能获得更多订单；只有满足交付及收入确认条件才形成当期收入。",conditions:"需要可用产能、融资、并网条件和客户验收支持。",reverse:"价格竞争、项目延期及回款延迟可能抵消需求增长。",watch:"跟踪订单转化、交付、分部收入、应收账款和经营现金流。"},
 ];
 export const getCompany = (id:string) => companies.find(c=>c.id===id);
-export const stageSources:Record<string,Record<string,string[]>>={catl:{cell:["catl-01"],system:["catl-01"]},eve:{cell:["eve-02","eve-03"],system:["eve-01"]},sungrow:{pcs:["sungrow-03","sungrow-04"],system:["sungrow-03"]},tesla:{system:["tesla-01"],service:["tesla-05"]},fluence:{system:["fluence-01"],service:["fluence-02"]},lg:{cell:["lg-02"],system:["lg-04"],service:["lg-04"]}};
-export function activeStages(id:string,evidence:Evidence[]) {return stages.filter(s=>(stageSources[id]?.[s.id]||[]).some(key=>evidence.some(e=>e.id===key&&!e.imported&&!e.timeAnomaly))).map(s=>s.id);}
+export const stageSources:Record<string,Record<string,string[]>>={"catl":{"cell":["catl-01","catl-02","catl-04"],"system":["catl-01","catl-02","catl-04"]},"eve":{"system":["eve-01"],"cell":["eve-02","eve-03"]},"sungrow":{"system":["sungrow-01","sungrow-03"],"pcs":["sungrow-03","sungrow-04"]},"tesla":{"system":["tesla-01","tesla-03"],"service":["tesla-05"]},"fluence":{"system":["fluence-01","fluence-04"],"service":["fluence-02"]},"lg":{"cell":["lg-02","lg-03"],"system":["lg-04"],"service":["lg-04"]}};
+export function researchEligible(e:Evidence) {return !e.timeAnomaly&&e.researchState!=="withdrawn"&&(!e.imported||e.researchState==="adopted");}
+export function evidenceStages(e:Evidence) {return e.stageIds??Object.entries(stageSources[e.companyId]||{}).filter(([,ids])=>ids.includes(e.id)).map(([id])=>id);}
+export function activeStages(id:string,evidence:Evidence[]) {return stages.filter(s=>evidence.some(e=>e.companyId===id&&researchEligible(e)&&e.progress!=="plan"&&tier(e).rank>=2&&evidenceStages(e).includes(s.id))).map(s=>s.id);}
 export function tier(e:Evidence) {
- if(e.timeAnomaly) return {label:"来源存在异常 · 待复核",tone:"amber",rank:0};
- if(e.imported) return {label:"用户复核材料",tone:"amber",rank:0};
- if(e.metric && /收入|营收|revenue/i.test(e.metric.label) && !/集团|total|合计|发电|整体|合并|非ESS/i.test(e.metric.scope)) return {label:"已披露相关收入",tone:"green",rank:3};
- if(/属于规划|产能.*目标|规划表态|尚未商业化/.test(e.claim)) return {label:"研发 / 规划",tone:"amber",rank:1};
+ if(e.researchState==="withdrawn")return {label:"已撤回",tone:"gray",rank:0};
+ if(e.timeAnomaly)return {label:"来源存在异常 · 待复核",tone:"amber",rank:0};
+ if(e.imported&&e.researchState!=="adopted")return {label:"候选 · 尚未生效",tone:"amber",rank:0};
+ if(e.progress==="context")return {label:e.metric&&/收入|营收/.test(e.metric.label)?"混合口径收入 / 背景":"指标 / 背景材料",tone:"gray",rank:0};
+ if(e.progress==="plan"||/属于规划|产能.*目标|规划表态|尚未商业化/.test(e.claim))return {label:"研发 / 规划",tone:"amber",rank:1};
+ if(e.metric&&/收入|营收|revenue/i.test(e.metric.label)&&!/集团|total|合计|发电|整体|合并|非ESS/i.test(e.metric.scope))return {label:"已披露相关收入",tone:"green",rank:3};
  return {label:"产品 / 交付等证据",tone:"blue",rank:2};
 }
-export function companyTier(id:string, evidence:Evidence[]) {
- const list=evidence.filter(e=>e.companyId===id && !e.imported);
- return list.length ? list.map(tier).sort((a,b)=>b.rank-a.rank)[0] : {label:"当前无有效证据",tone:"gray",rank:0};
+export function companyTier(id:string,evidence:Evidence[]) {const list=evidence.filter(e=>e.companyId===id&&researchEligible(e));return list.length?list.map(tier).sort((a,b)=>b.rank-a.rank)[0]:{label:"当前无有效证据",tone:"gray",rank:0};}
+export function relationStatus(companyId:string,stageId:string,evidence:Evidence[]) {
+ const list=evidence.filter(e=>e.companyId===companyId&&researchEligible(e)&&evidenceStages(e).includes(stageId)&&tier(e).rank>0);
+ const strongest=list.map(tier).sort((a,b)=>b.rank-a.rank)[0]||{label:"本资料范围未检得",tone:"gray",rank:0};
+ return {...strongest,evidenceIds:list.map(e=>e.id),hasPlan:list.some(e=>tier(e).rank===1),personal:list.some(e=>e.imported&&e.researchState==="adopted")};
+}
+export function versionChanges(before:Evidence[],after:Evidence[]) {
+ return companies.flatMap(c=>stages.flatMap(s=>{const a=relationStatus(c.id,s.id,before),b=relationStatus(c.id,s.id,after);return a.label===b.label&&a.evidenceIds.join()===b.evidenceIds.join()?[]:[{company:c.name,stage:s.name,before:a.label,after:b.label,beforeCount:a.evidenceIds.length,afterCount:b.evidenceIds.length,evidenceIds:b.evidenceIds}];}));
 }
 export function compare(a:string,b:string,evidence?:Evidence[]) {
  const ca=getCompany(a),cb=getCompany(b); if(!ca||!cb||a===b) throw new Error("请选择两家不同的有效公司");
@@ -41,10 +50,10 @@ export function compare(a:string,b:string,evidence?:Evidence[]) {
 }
 export function buildAnalysis(companyId:string,scenarioId:string,evidence:Evidence[]) {
  const c=getCompany(companyId),s=scenarios.find(s=>s.id===scenarioId); if(!c||!s) throw new Error("无效的公司或情景");
- const refs=evidence.filter(e=>e.companyId===companyId&&!e.imported&&!e.timeAnomaly);
+ const refs=evidence.filter(e=>e.companyId===companyId&&researchEligible(e));
  const causal=refs.filter(e=>scenarioId==="cost"?/成本|售价/.test(e.claim):scenarioId==="policy"?/关税|本地生产/.test(e.claim):/订单|交付|部署/.test(e.claim));
  const ordered=[...causal,...refs.filter(e=>!causal.some(r=>r.id===e.id))];
- return {company:c.name,scenario:s.name,mode:"offline-rules",promptVersion:"research-v1",facts:ordered.slice(0,3).map(e=>({text:e.claim,evidenceIds:[e.id]})),nodes:[{kind:"假设",title:s.name,text:s.hint,evidenceIds:[] as string[]},{kind:"推断",title:s.stage,text:s.mechanism,evidenceIds:ordered.slice(0,2).map(e=>e.id)},{kind:"推断",title:c.scope,text:`适用范围需与${c.name}的具体产品和合同匹配。${c.note}`,evidenceIds:refs.slice(0,2).map(e=>e.id)},{kind:"待验证",title:s.metric,text:s.watch,evidenceIds:[] as string[]}],conditions:s.conditions,reverse:s.reverse,gap:refs.length?"缺少合同、订单地域与成本敏感性数据，无法量化利润影响。":"缺少公司业务证据，不能形成针对该公司的确定结论。"};
+ return {company:c.name,scenario:s.name,activeStageIds:activeStages(companyId,evidence),sourceIds:refs.map(e=>e.id),mode:"offline-rules",promptVersion:"research-v1",facts:ordered.slice(0,3).map(e=>({text:e.claim,evidenceIds:[e.id]})),nodes:[{kind:"假设",title:s.name,text:s.hint,evidenceIds:[] as string[]},{kind:"推断",title:s.stage,text:s.mechanism,evidenceIds:ordered.slice(0,2).map(e=>e.id)},{kind:"推断",title:c.scope,text:`适用范围需与${c.name}的具体产品和合同匹配。${c.note}`,evidenceIds:refs.slice(0,2).map(e=>e.id)},{kind:"待验证",title:s.metric,text:s.watch,evidenceIds:[] as string[]}],conditions:s.conditions,reverse:s.reverse,gap:refs.length?"缺少合同、订单地域与成本敏感性数据，无法量化利润影响。":"缺少公司业务证据，不能形成针对该公司的确定结论。"};
 }
 export function validateCitations(value:{facts:{evidenceIds:string[]}[];nodes:{evidenceIds:string[]}[]},evidence:Evidence[]) {
  const ids=new Set(evidence.map(e=>e.id));

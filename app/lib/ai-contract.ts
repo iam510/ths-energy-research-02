@@ -1,5 +1,5 @@
 import {z} from "zod";
-import type {Evidence} from "./domain";
+import {companies,type Evidence} from "./domain.ts";
 
 const text=z.string().trim().min(1).max(900);
 const refs=z.array(z.string().max(90)).max(8);
@@ -43,15 +43,42 @@ export function checkGrounding(value:unknown,evidence:Evidence[],extraSource="")
  }
  walk(value);
 }
+function statementGrounding(text:string,ids:string[],evidence:Evidence[]) {
+ const refs=evidence.filter(e=>ids.includes(e.id));
+ checkGrounding({text},refs);
+ const compact=text.toLowerCase().replace(/\s/g,"");
+ for(const c of companies){const aliases=[c.name,c.english,...(c.id==="catl"?["CATL"]:[])];if(aliases.some(a=>compact.includes(a.toLowerCase().replace(/\s/g,"")))){if(!refs.some(e=>e.companyId===c.id))throw new ModelFailure("COMPANY_ATTRIBUTION","模型陈述中的公司与引用材料不匹配，结果已拒绝。",422);}}
+ if(/\d/.test(text)&&/收入|营收|成本|利润|金额/.test(text)){
+  const currencies=[{pattern:/美元|USD/i,code:"USD"},{pattern:/人民币|CNY|RMB/i,code:"CNY"},{pattern:/韩元|KRW/i,code:"KRW"}];
+  for(const c of currencies)if(c.pattern.test(text)&&!refs.some(e=>e.metric?.currency===c.code))throw new ModelFailure("FINANCIAL_UNIT","数值陈述的币种未由该条引用支持，已拒绝。",422);
+ }
+ const statedYear=text.match(/(?:FY)?(20\d{2})\s*年?度?[^。；]{0,25}(?:收入|营收|毛利率)/i)?.[1];
+ if(statedYear&&refs.some(e=>e.metric)&&!refs.some(e=>e.metric&&e.period.match(/20\d{2}/)?.[0]===statedYear))throw new ModelFailure("FINANCIAL_PERIOD","财务陈述的报告年度与引用材料不匹配，已拒绝。",422);
+ const assertedScope=text.replace(/(?:不能|不可|不应|不得|并非|不等于|不代表|无法|不是)[^。；，]{0,18}(?:纯储能收入|储能独立收入|单独储能收入)/g,"");
+ if(/纯储能收入|储能独立收入|单独储能收入/.test(assertedScope)&&refs.some(e=>e.metric&&/发电|合并|集团|非ESS/.test(e.metric.scope)))throw new ModelFailure("FINANCIAL_SCOPE","模型把混合业务口径当作单独储能收入，已拒绝。",422);
+}
 export function validateTransmission(raw:unknown,evidence:Evidence[]) {
  const parsed=transmissionSchema.safeParse(raw);
  if(!parsed.success)throw new ModelFailure("INVALID_SCHEMA","模型传导结果结构不完整，未生成正常结论。",422);
  const v=parsed.data;const kinds=["假设","推断","推断","待验证"];
  if(v.nodes.some((n,i)=>n.kind!==kinds[i])||v.nodes.slice(1,3).some(n=>!n.evidenceIds.length))throw new ModelFailure("INVALID_REASONING","模型未区分假设、推断与待验证节点，或缺少业务引用。",422);
- checkGrounding(v,evidence);return v;
+ checkGrounding(v,evidence);
+ for(const n of v.nodes.slice(1))statementGrounding(n.title+" "+n.text,n.evidenceIds,evidence);
+ return v;
 }
-export function validateComparison(raw:unknown,evidence:Evidence[]) {
- const parsed=comparisonSchema.safeParse(raw);if(!parsed.success)throw new ModelFailure("INVALID_SCHEMA","模型比较结果结构不完整。",422);checkGrounding(parsed.data,evidence);return parsed.data;
+export function validateComparison(raw:unknown,evidence:Evidence[],allowPartial=false) {
+ const parsed=comparisonSchema.safeParse(raw);if(!parsed.success)throw new ModelFailure("INVALID_SCHEMA","模型比较结果结构不完整。",422);
+ const v=parsed.data;checkGrounding(v,evidence);
+ const expected=new Set(evidence.map(e=>e.companyId));let dropped=0;
+ const validateItem=(item:{text:string;evidenceIds:string[]},both:boolean)=>{
+  if(both){const covered=new Set(evidence.filter(e=>item.evidenceIds.includes(e.id)).map(e=>e.companyId));if([...expected].some(id=>!covered.has(id)))throw new ModelFailure("COMPARISON_COVERAGE","可比性结论必须同时引用双方材料，已拒绝单边依据。",422);}
+  if(item.evidenceIds.length)statementGrounding(item.text,item.evidenceIds,evidence);else if(/\d|已披露|营收|收入为|毛利率为/.test(item.text))throw new ModelFailure("MISSING_SUPPORT","事实或数值陈述缺少引用，已拒绝。",422);
+ };
+ const retain=(items:typeof v.comparable,both:boolean)=>items.filter(item=>{try{validateItem(item,both);return true;}catch(e){if(!allowPartial||!(e instanceof ModelFailure)||e.code==="UNSAFE_OUTPUT")throw e;dropped++;return false;}});
+ const comparable=retain(v.comparable,true),limitations=retain(v.limitations,false);
+ if(!comparable.length||!limitations.length)throw new ModelFailure("INSUFFICIENT_GROUNDED_OUTPUT","通过证据校验的可比项或边界不足，本次结果未展示。",422);
+ if(/\d/.test(v.summary+v.gaps.join("")))throw new ModelFailure("UNSUPPORTED_NUMBER","比较摘要与资料缺口不得新增数值，请查看有来源的指标表。",422);
+ return {...v,comparable,limitations,validationWarnings:dropped?[`有${dropped}项模型陈述未通过公司、数字或口径校验，已移除；仅展示剩余有效条目。`]:[]};
 }
 export function validateExtraction(raw:unknown,source:string) {
  const parsed=extractionSchema.safeParse(raw);if(!parsed.success)throw new ModelFailure("INVALID_SCHEMA","模型提取结果结构不完整。",422);

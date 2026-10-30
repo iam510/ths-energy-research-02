@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T15:35:05.233997+00:00",
+  "generatedAt": "2026-10-30T16:18:10.704931+00:00",
   "root": "02_产业链跨市场与公司研究",
   "files": [
     {
@@ -9,8 +9,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6539,
-      "sha256": "4135f94a1552e9384e70fc444b6dea7be0b7c022a5e227b1e5b006b98b17aa07"
+      "bytes": 6794,
+      "sha256": "76cd067f9581ae05e4083405a9f1b989b9dd0be642ff900a6c42b6d7da2ff3e2"
     },
     {
       "path": "app/.env.example",
@@ -44,13 +44,18 @@
     },
     {
       "path": "app/app/api/analyze/route.ts",
-      "bytes": 1638,
-      "sha256": "8ad19f978f541bf772418b45557e65d145b11b31c2300fb81209b89e20c3ebb7"
+      "bytes": 1812,
+      "sha256": "a968af710b18cc092ab818985dd5953444c32209c098985074d8db70084b2b4b"
     },
     {
       "path": "app/app/api/research/route.ts",
-      "bytes": 3046,
-      "sha256": "e1e04fd99b2f210f3ca3b06e830fdac4f80b3ffb875a572da26fb2ff17c2eeca"
+      "bytes": 2742,
+      "sha256": "b33d354d67f39688ca46386b085121aa5a769e0a710e46852165825aeb4707da"
+    },
+    {
+      "path": "app/app/api/review/route.ts",
+      "bytes": 1544,
+      "sha256": "bec8158e09844e2a2af5d8dc3f43988d763987b2a6ec0207a0b4d6556a96d09e"
     },
     {
       "path": "app/app/chatgpt-auth.ts",
@@ -59,8 +64,8 @@
     },
     {
       "path": "app/app/globals.css",
-      "bytes": 29689,
-      "sha256": "92c755e82a66291dd0f1e146d1dfbc1845812929193389564999db35a3f71fee"
+      "bytes": 31281,
+      "sha256": "a60a5acd48c404ad6910bd9b34a19b7f4d141a1cd34699c8d5a1861937927ea4"
     },
     {
       "path": "app/app/layout.tsx",
@@ -84,8 +89,13 @@
     },
     {
       "path": "app/components/research-app.tsx",
-      "bytes": 36315,
-      "sha256": "34e00227b4ca9429dd31b8013c7af2b6676bf5eda40b296b769f2af30b56f37e"
+      "bytes": 39319,
+      "sha256": "21f5bc5127a91d4718f956cb26c39e6fddfdf1e4c5f15ab26f31b1c562386896"
+    },
+    {
+      "path": "app/components/research-review.tsx",
+      "bytes": 5900,
+      "sha256": "7f642dcc0d4ce5c7c9c2cbc507ad0fa9cdd3c18dddcff83e8884840a326f956c"
     },
     {
       "path": "app/components/ui/accordion.tsx",
@@ -398,14 +408,19 @@
       "sha256": "31f4ca67a4a62572571003d3d5aac85ee6fbfca67a192924bac6b168d95e98fd"
     },
     {
+      "path": "app/data/ai-example.json",
+      "bytes": 3561,
+      "sha256": "a55c2a01f6ecdf5fe18ad27b0a84694cfa4b33f6f658ab7d86ec3eb380219d99"
+    },
+    {
       "path": "app/data/evidence.json",
-      "bytes": 17671,
-      "sha256": "527ae37023c488629051195345e305b45e7c20d5f25b469adced1d23bd711afa"
+      "bytes": 19187,
+      "sha256": "33c5479a75ce6168509103521081950f9652b1aabeb3ce6125c3ad5dcac8ba23"
     },
     {
       "path": "app/data/update-example.json",
-      "bytes": 914,
-      "sha256": "478ea24f70be2f8ca48c46813dd8c1483a09572ba30eb52971586ff24092fcdd"
+      "bytes": 992,
+      "sha256": "d525a663f6bb727af25a46cf08e37a163a8d9c559877ce7635e837891beb46ee"
     },
     {
       "path": "app/db/index.ts",
@@ -469,13 +484,13 @@
     },
     {
       "path": "app/lib/ai-contract.ts",
-      "bytes": 5009,
-      "sha256": "f2fe5684dc67b0a58e5e2b16e3938aa23a14abcc2d994925fb5b8dac1120fc1e"
+      "bytes": 8421,
+      "sha256": "b74735de6dc335ffa90fa1f077676c5cd0eb7b4c830daa2306be8a09235db752"
     },
     {
       "path": "app/lib/ai-service.ts",
-      "bytes": 9298,
-      "sha256": "71898c64691698dcc31bd5672aeb585308c5180962d6d36b41e2cad5a443a8c6"
+      "bytes": 10776,
+      "sha256": "d2cdae627b3c12a8d2cbd11d3358eb4205f95d70a563707b9d9c79373e1ae827"
     },
     {
       "path": "app/lib/connector-context.ts",
@@ -504,8 +519,8 @@
     },
     {
       "path": "app/lib/domain.ts",
-      "bytes": 8928,
-      "sha256": "67dfac2bc763618f4325a7910b8b7fe3d159e08b925bd5f18d359f178f545c55"
+      "bytes": 10847,
+      "sha256": "3172fdc8082e6b5468eb4abd62c2dd8b17ddb2fbab3ecdcb34e893e2bed24d09"
     },
     {
       "path": "app/lib/http.ts",
@@ -514,13 +529,18 @@
     },
     {
       "path": "app/lib/minimax.ts",
-      "bytes": 3426,
-      "sha256": "a0cbd7f644ffa7701c41f974bea1ede6b0efce6e73b3d613191702c7a221a0a9"
+      "bytes": 3705,
+      "sha256": "5b1e30116487ce4e8b3b033200fbc21c2087fbd1c2b98631ef6f18eb17be9e93"
     },
     {
       "path": "app/lib/repository.ts",
       "bytes": 1628,
       "sha256": "bfc3e91a91da41707612bff688cb8116a219046022265d7d81cde286f1128308"
+    },
+    {
+      "path": "app/lib/review.ts",
+      "bytes": 1481,
+      "sha256": "bde3fa01163ca93f581f82d466a77632e02534ece05af568f4c74b8115716638"
     },
     {
       "path": "app/lib/utils.ts",
@@ -529,8 +549,8 @@
     },
     {
       "path": "app/lib/validation.ts",
-      "bytes": 2160,
-      "sha256": "385e6b3f23536772811cd86b3760770a8e6bbf29041345538cf6b6e8aea1a996"
+      "bytes": 2483,
+      "sha256": "5760a74a90a4d1b46467317eb24bcb8f147d001d46bc3314d43852a07ea64af7"
     },
     {
       "path": "app/next-env.d.ts",
@@ -679,8 +699,8 @@
     },
     {
       "path": "data/research-sources.json",
-      "bytes": 18582,
-      "sha256": "0d18dc4b5344d9bbae6ccc92a62820e839f0a5ef0f6648b919282ffbd8520522"
+      "bytes": 20176,
+      "sha256": "2fe250e129c18e0f6cb02331cc46e01cc95bc48bd322620a672a7ee4aaf44af8"
     },
     {
       "path": "delivery/13-线上真实调用复测.png",
@@ -723,19 +743,64 @@
       "sha256": "9754088e4f6713044b031bbfb6d0d343a989860ea65c959d50f607dd8fcbb44e"
     },
     {
+      "path": "delivery/21-线上业务可信度矩阵.png",
+      "bytes": 102058,
+      "sha256": "763d3dc313d96b84ea1022cc9c00ffdc68fda6ee47baa66db2d3e09df1709987"
+    },
+    {
+      "path": "delivery/22-复核生效改变归属.png",
+      "bytes": 107039,
+      "sha256": "c359d34f3e4044bb60611c0732e86842fdd77eeddbd277b649dbd79101e4e4b1"
+    },
+    {
+      "path": "delivery/23-生效材料参与真实AI.png",
+      "bytes": 116113,
+      "sha256": "1f87acecb124ffdd9cad74b5a2bdea14a228d3dc69f86fe5a61b3bde87a55297"
+    },
+    {
+      "path": "delivery/24-最终公司比较与双方引用.png",
+      "bytes": 128375,
+      "sha256": "1d0b18f79ef639ca9071cd58f2d9afa1de5526294f11420cc220476c2a622559"
+    },
+    {
+      "path": "delivery/25-撤回与归属变化记录.png",
+      "bytes": 85330,
+      "sha256": "34e1d28da915e92f89e13c61624e9fa09f1e698e26a3008c0dd4e36ed4975c97"
+    },
+    {
+      "path": "delivery/26-撤回后重新计算矩阵.png",
+      "bytes": 106913,
+      "sha256": "28e74504c205cabcc19ee0cd4c5d55873daf4fb5f1c994e00be7ac73c85dce30"
+    },
+    {
+      "path": "delivery/27-额度与历史样例明确标识.png",
+      "bytes": 96184,
+      "sha256": "6ea18b9a5fc8a444aa16a983edd412e96d7b2b844f9d5ae1a80cf1cb1410b7b6"
+    },
+    {
+      "path": "delivery/28-完整更新演示抽帧检查.png",
+      "bytes": 673424,
+      "sha256": "88de1635153258eedd1d0475d72fc812e16a3e86f6005bad5d260f247601ed08"
+    },
+    {
+      "path": "delivery/29-新版手机矩阵.png",
+      "bytes": 33379,
+      "sha256": "7fdf36b2a9c77db58519d047ce98e43fd6f57f60833d3983f7a64da590fc1499"
+    },
+    {
       "path": "delivery/API测试结果-本地.json",
-      "bytes": 2118,
-      "sha256": "8f9b4f29ea2fea20d51a009e6ebc6afdcc3a824a294171d1eeda08bb9951d359"
+      "bytes": 3018,
+      "sha256": "af0ee88341e4f103f7604e628f365d6b50e49c3334c9e590a523c594312d92a6"
     },
     {
       "path": "delivery/API测试结果-线上.json",
-      "bytes": 2155,
-      "sha256": "dae502434ce33e35c4254d10329ab7b0e6c34c0e5bf1a982e2a7d9b6da6a6a5c"
+      "bytes": 3055,
+      "sha256": "98e472c38e3b61ae1556eabee037a1a6f782fee38811db585c21ff2acb598779"
     },
     {
       "path": "delivery/MiniMax接入验证.json",
-      "bytes": 2034,
-      "sha256": "6e6f891dea3fcd1c31bbeb77161a67fd8a9779fa23fb6599218084d13a33d576"
+      "bytes": 2471,
+      "sha256": "f461f3827516bd938b8463d65d5aafce78cf6e695d9bd84e546edf35ea2848d9"
     },
     {
       "path": "delivery/MiniMax最终传导页面.txt",
@@ -771,6 +836,16 @@
       "path": "delivery/MiniMax真实比较页面.txt",
       "bytes": 10126,
       "sha256": "9bc714366a74f83537ad457bc70c2f4f0e84f3650e5df969d906b6b272418803"
+    },
+    {
+      "path": "delivery/history/AI接入阶段演示.mp4",
+      "bytes": 915827,
+      "sha256": "1612c176967792610968b7e0e3b3c5907eb2cbe7276ef4a0181670fc7b232e56"
+    },
+    {
+      "path": "delivery/history/MiniMax接入阶段验证.json",
+      "bytes": 2034,
+      "sha256": "6e6f891dea3fcd1c31bbeb77161a67fd8a9779fa23fb6599218084d13a33d576"
     },
     {
       "path": "delivery/screenshots/01-产业链.png",
@@ -834,8 +909,8 @@
     },
     {
       "path": "delivery/全部领域与AI边界测试.txt",
-      "bytes": 2681,
-      "sha256": "9394ca0ea975c5f228763681c208a8e2262b35ddfa1116f199c167d3b026be4c"
+      "bytes": 3859,
+      "sha256": "22a19d79530b622a8b5e0c303f583e2db675a3021385287fa861c8337c1f4b0f"
     },
     {
       "path": "delivery/响应式检查.json",
@@ -843,19 +918,44 @@
       "sha256": "309ac14ecdd93f4bf7befcf47cbeee31c7ef293bb33a1e39bc76f955d473f103"
     },
     {
+      "path": "delivery/复核版真实比较验证.json",
+      "bytes": 3460,
+      "sha256": "cf8d533b1ce33eb331402fe794412a24bc5ae8b88cd83254c31bb587747efc26"
+    },
+    {
+      "path": "delivery/复核版线上真实传导页面.txt",
+      "bytes": 7308,
+      "sha256": "593f610d1739b5b64303315c0db02a94ad5b4263d335952b3edefe8d99f7fed4"
+    },
+    {
+      "path": "delivery/复核版线上真实比较页面.txt",
+      "bytes": 10110,
+      "sha256": "4daf449c41053cc06f085dabba314e5efa31cda8a4fc7e846b600e0711197a81"
+    },
+    {
+      "path": "delivery/复核生效后的真实AI快照.md",
+      "bytes": 12266,
+      "sha256": "b2aa6078df2b32883b4cdf78358119b7bef9380f51e3a8e0bc05ac40664ae1a9"
+    },
+    {
       "path": "delivery/提交清单.md",
-      "bytes": 2257,
-      "sha256": "cee860d30b5c3568709dbca7072e0b4b81074bc11a25c63054f805191c5ed645"
+      "bytes": 2292,
+      "sha256": "486ebc77f7c934b9e4df007b65192c402eec4450d7e5e493d7e25b8e7a4488a1"
+    },
+    {
+      "path": "delivery/本轮改进验收.json",
+      "bytes": 1925,
+      "sha256": "2c66ff93c83c20decf3e561d261240b27dbdc539a57f698bc3f77a8b30395d12"
     },
     {
       "path": "delivery/演示脚本.md",
-      "bytes": 1451,
-      "sha256": "80e62e1a545a77487c653c910fb6965f97803a3486f341216312c5c7994446ab"
+      "bytes": 1719,
+      "sha256": "5faab810ca123e5fbe16fa2812fa8ad9f8f14453c441e52a85f4a863276c0dd7"
     },
     {
       "path": "delivery/演示视频.mp4",
-      "bytes": 915827,
-      "sha256": "1612c176967792610968b7e0e3b3c5907eb2cbe7276ef4a0181670fc7b232e56"
+      "bytes": 1572449,
+      "sha256": "b15ca7188408d90c77bbf2357b1dbbeb58b47c19638c24e190c3c5c17ae6699e"
     },
     {
       "path": "delivery/真实AI研究快照.md",
@@ -874,8 +974,8 @@
     },
     {
       "path": "delivery/视频校验.json",
-      "bytes": 398,
-      "sha256": "dfd99e4cc7ce1d9a09f51011d0ec5ac7d3c01baf6a9c693e6ac90524d7bfe040"
+      "bytes": 403,
+      "sha256": "cb0ec22a61d5e57928f5c5bac8edad6bcbab8bc2c56b50f081db4716a054a1d3"
     },
     {
       "path": "delivery/调用额度测试.json",
@@ -884,8 +984,8 @@
     },
     {
       "path": "delivery/部署验证.json",
-      "bytes": 569,
-      "sha256": "a4ea32aeab6656fbf6b831ee4f1b207863b09c7fcd78aca192f7abcb71c8fd7c"
+      "bytes": 611,
+      "sha256": "d9273c8fa2b867267be4805be721186d9afc13a104a3b986a0b8533afdd811df"
     },
     {
       "path": "delivery/领域测试结果.txt",
@@ -894,8 +994,23 @@
     },
     {
       "path": "docs/AI使用与验证记录.md",
+      "bytes": 4271,
+      "sha256": "39ffada0f916466b95fb3a423ba30cb8d4cc4896da419460ad9e8ebf42003752"
+    },
+    {
+      "path": "docs/history/AI接入阶段-AI使用与验证记录.md",
       "bytes": 6585,
       "sha256": "940e98070df280990314a72066f7df7fcc491042767d7c8ec243f6e91730f839"
+    },
+    {
+      "path": "docs/history/AI接入阶段-模型接入说明.md",
+      "bytes": 4698,
+      "sha256": "5131290c7bf148c517d4928b934e4aec6403383a1b9a49c81640d6f930626f0d"
+    },
+    {
+      "path": "docs/history/AI接入阶段-测试说明.md",
+      "bytes": 8677,
+      "sha256": "8ab4410072cdf512cc2900bc2b1e2a1fe056702d134123e847900ca478e59351"
     },
     {
       "path": "docs/实现规划.md",
@@ -904,23 +1019,23 @@
     },
     {
       "path": "docs/数据口径与来源.md",
-      "bytes": 7592,
-      "sha256": "a9575607a1b0a922800eb2c06c35bceec77828b7911c78b7763ecd910dae81c3"
+      "bytes": 8279,
+      "sha256": "a05e2092490ab3f8692fed4854615dca4235ad4ec0ce7f7c71cb134963e98bc3"
     },
     {
       "path": "docs/模型接入说明.md",
-      "bytes": 4698,
-      "sha256": "5131290c7bf148c517d4928b934e4aec6403383a1b9a49c81640d6f930626f0d"
+      "bytes": 3864,
+      "sha256": "16a5c1c409630d5c0cd49b7aade8e680fb07e944bad2f721b47141750d5d4229"
     },
     {
       "path": "docs/测试说明.md",
-      "bytes": 8677,
-      "sha256": "8ab4410072cdf512cc2900bc2b1e2a1fe056702d134123e847900ca478e59351"
+      "bytes": 3738,
+      "sha256": "906e3ecbb194f6aba449af6be9557d8603ea29e48eaffe689a63fa20672bb9f2"
     },
     {
       "path": "docs/部署与交付.md",
-      "bytes": 2440,
-      "sha256": "34acf856a6b6149c3065241f221372d9d26368da656b590b5294bc35a2381a60"
+      "bytes": 2507,
+      "sha256": "a5f1524d4bc1a595b0333c571b0244f17f8f82d1ae08b64eb10aba03ea04e76c"
     },
     {
       "path": "docs/题目.md",
@@ -964,8 +1079,8 @@
     },
     {
       "path": "tests/api-check.mjs",
-      "bytes": 5655,
-      "sha256": "a701efce44c36316ed63d3a2d892c0ba1db6fa9aa0dd1b7e1eca7d21ea00ec7d"
+      "bytes": 9060,
+      "sha256": "aea5d839310d3cc99a70ae004b8a3aec43cb2d67e6f9eb06c637fa39738fec1d"
     },
     {
       "path": "tests/domain.test.ts",
@@ -981,6 +1096,11 @@
       "path": "tests/quota_check.py",
       "bytes": 2350,
       "sha256": "0c406880f9466af38d6b164895ca45314709b974c5012834eaff330764e25ef2"
+    },
+    {
+      "path": "tests/research-review.test.ts",
+      "bytes": 6515,
+      "sha256": "bdcafe538771e0490dfe1eecdb7b8c51462e56519b469b2c2c97a60862c2e366"
     }
   ],
   "note": "清单自身不记录自身哈希；排除本地凭据、运行数据库、依赖、构建缓存、Git元数据、录制原始帧与工具二进制。"

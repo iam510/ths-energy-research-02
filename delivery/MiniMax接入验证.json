@@ -6,29 +6,32 @@
   "realGenerationSucceeded": true,
   "lastObservedHttpStatus": 200,
   "lastObservedCode": null,
-  "status": "订阅Key替换完成；三个AI入口真实返回，候选保存及刷新验收通过；语义仍需复核",
+  "status": "最终v6线上真实传导和比较成功；普通候选生效及撤回流程已验证",
   "mockModelTestsPassed": 19,
   "domainTestsPassed": 15,
   "quotaTestsPassed": 4,
   "secretValueIncluded": false,
   "runtimeDeployed": true,
-  "deploymentVersion": "appgprj_6ae4a0f63ee4819181208452e5f39ee7~appgver_0178f812a7f08191b68ef944f623f375",
-  "sourceCommit": "58ce47610d62794c68909e34f8b1181dbd1ce255",
-  "lastRecheckedAt": "2026-10-30T15:33:42.494885+00:00",
-  "directSmokeHttpStatus": 402,
-  "hostedBrowserResult": "MiniMax账户余额不足，未完成模型调用。",
+  "deploymentVersion": "appgprj_6ae4a0f63ee4819181208452e5f39ee7~appgver_335ccf36f93c8191a05d6b4c721173a3",
+  "sourceCommit": "a750eb1d6cb9979bdb5dc98662d8347afd6abdbd",
+  "lastRecheckedAt": "2026-10-30T16:18:09.030418+00:00",
   "offlineFallbackVerified": true,
   "recheckEvidence": [
-    "15-MiniMax真实传导成功.png",
-    "16-MiniMax真实比较成功.png",
-    "17-MiniMax真实材料提取.png",
-    "18-AI候选保存版本.png",
-    "19-最终版本真实调用凭证.png",
-    "真实AI研究快照.md"
+    "21-线上业务可信度矩阵.png",
+    "22-复核生效改变归属.png",
+    "23-生效材料参与真实AI.png",
+    "复核版线上真实传导页面.txt",
+    "复核生效后的真实AI快照.md",
+    "24-最终公司比较与双方引用.png",
+    "复核版线上真实比较页面.txt",
+    "25-撤回与归属变化记录.png",
+    "26-撤回后重新计算矩阵.png",
+    "27-额度与历史样例明确标识.png",
+    "本轮改进验收.json"
   ],
   "keyKind": "M Plan subscription; value excluded",
   "runtimeEnvironmentRevision": 2,
-  "promptVersion": "minimax-research-v3",
+  "promptVersion": "minimax-research-v6",
   "historicalFailures": [
     "按量Key HTTP402",
     "公司比较超出条目上限被拒绝",
@@ -37,22 +40,27 @@
   "browserRuns": [
     {
       "task": "transmission",
-      "runId": "44be55c8-edbc-492f-bc3f-0a8fb0eac709",
-      "inputTokens": 881,
-      "outputTokens": 581
+      "promptVersion": "minimax-research-v6",
+      "runId": "1804968a-cf32-4ff3-8e27-e91b264789e6",
+      "inputTokens": 1120,
+      "outputTokens": 543,
+      "durationMsApprox": 5400,
+      "revision": 2,
+      "adoptedMaterialDiscussed": true
     },
     {
       "task": "compare",
-      "runId": "a3a60ac5-a1e4-4699-b371-9730f03d2324",
-      "inputTokens": 1375,
-      "outputTokens": 702
-    },
-    {
-      "task": "extract",
-      "runId": "5e256155-fe1b-4a70-a984-47636facf57b",
-      "inputTokens": 426,
-      "outputTokens": 144
+      "promptVersion": "minimax-research-v6",
+      "runId": "26e8aaf4-6e0c-4ed5-9fb6-0c30c5896319",
+      "inputTokens": 1694,
+      "outputTokens": 837,
+      "durationMsApprox": 14200,
+      "revision": 2,
+      "personalMaterialReferenced": true
     }
   ],
-  "semanticReviewLimitation": "模型比较曾将行业毛利率称为分产品毛利率，仍需人工回看原文，不把结构/引用校验当作语义事实认证。"
+  "semanticReviewLimitation": "局部校验不是完整语义证明。比较可移除个别不支持条目并明确提示；有效可比项或边界不足则整次拒绝。此前行业与分产品毛利率的错误判断已纠正。",
+  "reviewAndGroundingTestsPassed": 13,
+  "totalTestsPassed": 47,
+  "historicalFailureRecords": "history/MiniMax接入阶段验证.json"
 }

@@ -10,7 +10,9 @@ export async function POST(request:Request) {
  try {
   const parsed=analysisInput.safeParse(await readBody(request));if(!parsed.success)return json({error:"请选择有效公司、情景与研究模式。系统不接受交易指令。"},400);
   if(parsed.data.mode==="live")return await aiResponse(request,{task:"transmission",companyId:parsed.data.companyId,scenarioId:parsed.data.scenarioId,revision:parsed.data.revision});
-  const head=(await versions(workspace(request)))[0];
+  const history=await versions(workspace(request));
+  const head=parsed.data.revision===undefined?history[0]:history.find(v=>v.revision===parsed.data.revision);
+  if(!head)return json({error:"所选研究版本不存在"},409);
   const result=buildAnalysis(parsed.data.companyId,parsed.data.scenarioId,head.evidence);
   if(!validateCitations(result,head.evidence))return json({error:"引用校验未通过，未生成正常研究结果。"},422);
   return json({analysis:result,revision:head.revision,model:null,mode:"offline-rules"});

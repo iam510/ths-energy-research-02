@@ -1,9 +1,9 @@
 import {versions,save,updateExample} from "@/lib/repository";
 import {updateSchema,fingerprint,blockedRequest} from "@/lib/validation";
 import {json,workspace,sameOrigin,readBody} from "@/lib/http";
-import {aiConfiguration} from "@/lib/ai-service";
+import {aiConfiguration,quotaStatus} from "@/lib/ai-service";
 export const dynamic="force-dynamic";
-export async function GET(request:Request) {try {return json({versions:await versions(workspace(request)),example:updateExample,mode:aiConfiguration().configured?"live-available":"offline",ai:aiConfiguration(),asOf:"2026-10-30",classificationVersion:"storage-v1"});}catch {return json({error:"无法读取研究版本；持久存储暂不可用。请重试，不会自动覆盖历史数据。"},503);}}
+export async function GET(request:Request) {try {return json({versions:await versions(workspace(request)),example:updateExample,mode:aiConfiguration().configured?"live-available":"offline",ai:{...aiConfiguration(),quota:await quotaStatus(request)},asOf:"2026-10-30",classificationVersion:"storage-v1"});}catch {return json({error:"无法读取研究版本；持久存储暂不可用。请重试，不会自动覆盖历史数据。"},503);}}
 export async function POST(request:Request) {
  if(!sameOrigin(request)) return json({error:"仅接受同源提交"},403);
  try {
@@ -14,9 +14,8 @@ export async function POST(request:Request) {
   if(head.revision!==expectedRevision)return json({error:"研究版本已变化，请刷新后重新复核。"},409);
   if(head.revision>=25) return json({error:"当前演示空间已达到 25 个版本上限。"},429);
   if(head.evidence.some(e=>e.id===evidence.id||fingerprint(e)===fingerprint(evidence)))return json({error:"该材料已存在，未创建重复版本。"},409);
-  // Only the exact curated example inherits independent verification. User content cannot self-assign trust.
-  const curated=updateExample&&fingerprint(evidence)===fingerprint(updateExample)&&JSON.stringify(evidence.metric)===JSON.stringify(updateExample.metric)&&evidence.id===updateExample.id&&evidence.title===updateExample.title&&evidence.period===updateExample.period&&evidence.publishedAt===updateExample.publishedAt&&evidence.locator===updateExample.locator&&evidence.excerpt===updateExample.excerpt;
-  const accepted=curated?updateExample:{...evidence,id:`user-${crypto.randomUUID()}`,metric:undefined,imported:true,reviewStatus:"用户已复核，未经独立核验",sourceType:"用户提交的官方来源材料"};
+  // Import always starts as a candidate. Submitted trust and financial fields cannot grant credit.
+  const accepted={...evidence,id:`user-${crypto.randomUUID()}`,metric:undefined,stageIds:[],progress:"context" as const,researchState:"candidate" as const,review:undefined,imported:true,reviewStatus:"候选，尚未生效",sourceType:"用户提交的官方来源材料"};
   const next=await save(key,head.revision+1,[...head.evidence,accepted],reason);
   const secure=new URL(request.url).protocol==="https:"?"; Secure":"";
   return json({version:next},201,{"Set-Cookie":`research_workspace=${key}; Path=/; HttpOnly; SameSite=Strict; Max-Age=2592000${secure}`});
