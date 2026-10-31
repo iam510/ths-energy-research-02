@@ -1,5 +1,5 @@
 export type Metric = {label:string;value:number;unit:string;currency?:string;scope:string};
-export type Evidence = {id:string;companyId:string;title:string;url:string;publishedAt:string|null;period:string;locator:string;excerpt:string;claim:string;sourceType:string;reviewStatus:string;metric?:Metric;imported?:boolean;kind?:string;retrievedAt?:string;timeAnomaly?:boolean;notes?:string;stageIds?:string[];progress?:"revenue"|"product"|"plan"|"context";researchState?:"candidate"|"adopted"|"withdrawn";review?:{at:string;reason:string;excerpt:string;sourceConfirmed:boolean}};
+export type Evidence = {id:string;companyId:string;title:string;url:string;publishedAt:string|null;period:string;locator:string;excerpt:string;claim:string;sourceType:string;reviewStatus:string;metric?:Metric;imported?:boolean;kind?:string;retrievedAt?:string;timeAnomaly?:boolean;notes?:string;stageIds?:string[];progress?:"revenue"|"product"|"plan"|"context";researchState?:"candidate"|"adopted"|"withdrawn";supersededBy?:string;review?:{at:string;reason:string;excerpt:string;sourceConfirmed:boolean;replacesIds?:string[]}};
 export const stages = [
  {id:"cell",name:"电芯与电池系统",en:"BATTERY",description:"储存电能的核心载体",boundary:"包含储能电芯、电池模组与电池系统；不将动力电池收入计为储能。"},
  {id:"pcs",name:"变流与控制",en:"CONVERSION",description:"连接电池与电网",boundary:"PCS、电力电子与能量管理；有集成产品不代表单独披露 PCS 收入。"},
@@ -21,10 +21,11 @@ export const scenarios = [
 ];
 export const getCompany = (id:string) => companies.find(c=>c.id===id);
 export const stageSources:Record<string,Record<string,string[]>>={"catl":{"cell":["catl-01","catl-02","catl-04"],"system":["catl-01","catl-02","catl-04"]},"eve":{"system":["eve-01"],"cell":["eve-02","eve-03"]},"sungrow":{"system":["sungrow-01","sungrow-03"],"pcs":["sungrow-03","sungrow-04"]},"tesla":{"system":["tesla-01","tesla-03"],"service":["tesla-05"]},"fluence":{"system":["fluence-01","fluence-04"],"service":["fluence-02"]},"lg":{"cell":["lg-02","lg-03"],"system":["lg-04"],"service":["lg-04"]}};
-export function researchEligible(e:Evidence) {return !e.timeAnomaly&&e.researchState!=="withdrawn"&&(!e.imported||e.researchState==="adopted");}
+export function researchEligible(e:Evidence) {return !e.timeAnomaly&&!e.supersededBy&&e.researchState!=="withdrawn"&&(!e.imported||e.researchState==="adopted");}
 export function evidenceStages(e:Evidence) {return e.stageIds??Object.entries(stageSources[e.companyId]||{}).filter(([,ids])=>ids.includes(e.id)).map(([id])=>id);}
 export function activeStages(id:string,evidence:Evidence[]) {return stages.filter(s=>evidence.some(e=>e.companyId===id&&researchEligible(e)&&e.progress!=="plan"&&tier(e).rank>=2&&evidenceStages(e).includes(s.id))).map(s=>s.id);}
 export function tier(e:Evidence) {
+ if(e.supersededBy)return {label:"已被更正材料取代",tone:"gray",rank:0};
  if(e.researchState==="withdrawn")return {label:"已撤回",tone:"gray",rank:0};
  if(e.timeAnomaly)return {label:"来源存在异常 · 待复核",tone:"amber",rank:0};
  if(e.imported&&e.researchState!=="adopted")return {label:"候选 · 尚未生效",tone:"amber",rank:0};

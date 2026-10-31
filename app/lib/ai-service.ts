@@ -18,7 +18,7 @@ export type AiTask=z.infer<typeof aiTaskSchema>;
 type AiEnvironment={MINIMAX_API_KEY?:string;MINIMAX_MODEL?:string;MINIMAX_DAILY_LIMIT?:string};
 export function aiConfiguration(){const config=env as typeof env&AiEnvironment;const n=Number(config.MINIMAX_DAILY_LIMIT);return {configured:!!config.MINIMAX_API_KEY,provider:"MiniMax",model:config.MINIMAX_MODEL||MODEL,dailyLimit:Number.isInteger(n)&&n>0?Math.min(n,100):30,workspaceLimit:8,promptVersion:PROMPT_VERSION};}
 const scope=(e:Evidence[])=>e.filter(researchEligible);
-const material=(e:Evidence[])=>e.map(({id,companyId,claim,period,metric,imported,researchState,reviewStatus,progress,stageIds})=>({id,companyId,claim,period,metric,progress,stageIds,trust:imported?"个人复核生效，未经独立核验":"预置来源材料",researchState,reviewStatus}));
+const material=(e:Evidence[])=>e.map(({id,companyId,claim,period,metric,imported,researchState,reviewStatus,progress,stageIds,review})=>({id,companyId,claim,period,metric,progress,stageIds,reviewedExcerpt:review?.excerpt,trust:imported?"个人复核生效，未经独立核验":"预置来源材料",researchState,reviewStatus}));
 
 async function reserve(key:string,task:string,sourceIds:string[]){
  if(!env.DB)throw new ModelFailure("STORAGE_UNAVAILABLE","模型额度存储暂不可用，未调用模型。",503);

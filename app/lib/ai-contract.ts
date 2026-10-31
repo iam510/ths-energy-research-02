@@ -77,8 +77,10 @@ export function validateComparison(raw:unknown,evidence:Evidence[],allowPartial=
  const retain=(items:typeof v.comparable,both:boolean)=>items.filter(item=>{try{validateItem(item,both);return true;}catch(e){if(!allowPartial||!(e instanceof ModelFailure)||e.code==="UNSAFE_OUTPUT")throw e;dropped++;return false;}});
  const comparable=retain(v.comparable,true),limitations=retain(v.limitations,false);
  if(!comparable.length||!limitations.length)throw new ModelFailure("INSUFFICIENT_GROUNDED_OUTPUT","通过证据校验的可比项或边界不足，本次结果未展示。",422);
- if(/\d/.test(v.summary+v.gaps.join("")))throw new ModelFailure("UNSUPPORTED_NUMBER","比较摘要与资料缺口不得新增数值，请查看有来源的指标表。",422);
- return {...v,comparable,limitations,validationWarnings:dropped?[`有${dropped}项模型陈述未通过公司、数字或口径校验，已移除；仅展示剩余有效条目。`]:[]};
+ if(/\d/.test(v.gaps.join("")))throw new ModelFailure("UNSUPPORTED_NUMBER","资料缺口不得新增数值，请查看有来源的指标表。",422);
+ // Never display the model's unreferenced summary, including after dropping an item.
+ const summary=`可比依据：${comparable[0].text}；比较边界：${limitations[0].text}`;
+ return {...v,summary,comparable,limitations,validationWarnings:dropped?[`有${dropped}项模型陈述未通过公司、数字或口径校验，已移除；摘要已由保留条目重新整理。`]:[]};
 }
 export function validateExtraction(raw:unknown,source:string) {
  const parsed=extractionSchema.safeParse(raw);if(!parsed.success)throw new ModelFailure("INVALID_SCHEMA","模型提取结果结构不完整。",422);

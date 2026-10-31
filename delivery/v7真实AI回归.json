@@ -1,0 +1,509 @@
+{
+  "base": "https://storage-research-510.green-trout-2026.chatgpt.site",
+  "note": "真实调用；六个有限样本，不代表全组合质量评测。提取输入为研究库lg-03的中文转述，用于验证规划不升级和提交文本内摘录一致性，不是重新抓取官网原文。此运行记录为f4c2bccfec386cbdb25d97e7e29069b110adee8d的v7服务端结果。",
+  "results": [
+    {
+      "input": {
+        "task": "transmission",
+        "companyId": "tesla",
+        "scenarioId": "cost"
+      },
+      "status": 200,
+      "at": "2026-10-31T07:18:41.879Z",
+      "result": {
+        "analysis": {
+          "company": "特斯拉",
+          "scenario": "电芯采购成本下降",
+          "activeStageIds": [
+            "system"
+          ],
+          "sourceIds": [
+            "tesla-01",
+            "tesla-02",
+            "tesla-03",
+            "tesla-04"
+          ],
+          "mode": "live",
+          "promptVersion": "minimax-research-v7",
+          "facts": [
+            {
+              "text": "报告将储能产品单位成本下降部分归因于原材料及制造成本下降，同时指出较高关税的抵消作用；这支持成本传导存在条件和反向因素。",
+              "evidenceIds": [
+                "tesla-04"
+              ]
+            },
+            {
+              "text": "Powerwall面向家庭及小型商业场景，Megapack面向工商业、公用事业及发电客户；支持储能系统业务归属。",
+              "evidenceIds": [
+                "tesla-01"
+              ]
+            },
+            {
+              "text": "发电与储能分部收入12,771百万美元，包含发电及储能，不能当作纯储能收入。",
+              "evidenceIds": [
+                "tesla-02"
+              ]
+            }
+          ],
+          "nodes": [
+            {
+              "kind": "假设",
+              "title": "电芯采购成本下降",
+              "text": "假设其他条件不变，电芯采购成本下降可能降低储能系统单位成本；该情景不代表成本必然同步下降。",
+              "evidenceIds": [
+                "tesla-04"
+              ]
+            },
+            {
+              "kind": "推断",
+              "title": "受影响环节",
+              "text": "成本下降可能先传导至电芯采购和储能系统制造环节，并可能影响Powerwall、Megapack等储能产品的单位成本、交付能力或定价空间；实际传导仍取决于原材料、制造成本、关税及产品组合等条件。",
+              "evidenceIds": [
+                "tesla-01",
+                "tesla-04"
+              ]
+            },
+            {
+              "kind": "推断",
+              "title": "公司具体业务",
+              "text": "Powerwall面向家庭及小型商业场景，Megapack面向工商业、公用事业及发电客户，因此电芯采购成本下降对两类储能业务的影响路径可能不同，且不能将发电与储能分部整体视为纯储能业务；部署规模也不能直接等同于当期收入或利润改善。",
+              "evidenceIds": [
+                "tesla-01",
+                "tesla-02",
+                "tesla-03"
+              ]
+            },
+            {
+              "kind": "待验证",
+              "title": "财务指标",
+              "text": "需要跟踪储能系统单位成本、年度储能产品部署量、发电与储能分部收入及毛利率，并进一步核验电芯采购成本下降是否被原材料成本、制造成本、关税、价格调整和产品组合变化抵消；当前材料不足以量化各指标的改善幅度。",
+              "evidenceIds": [
+                "tesla-01",
+                "tesla-02",
+                "tesla-03",
+                "tesla-04"
+              ]
+            }
+          ],
+          "conditions": "情景成立需以电芯采购成本确实下降为前提，并假定其他成本、售价、产品组合、产量、交付节奏和关税变化不抵消成本下降；同时需要验证该变化覆盖Powerwall和Megapack相关采购与制造环节。",
+          "reverse": "较高关税以及原材料和制造成本的上升可能抵消电芯采购成本下降；若公司通过降价将成本红利让渡给客户，或产品组合向低毛利业务倾斜，分部收入或利润改善也可能弱于成本下降所暗示的幅度。",
+          "gap": "缺少电芯采购成本、采购数量、单位储能产品成本、储能业务毛利率、分产品收入与利润、售价调整、关税影响以及成本下降向客户传导比例等数据，因而无法量化收入、毛利率、现金流或利润的变动。"
+        },
+        "receipt": {
+          "model": "MiniMax-M3.1-Flash",
+          "provider": "MiniMax",
+          "promptVersion": "minimax-research-v7",
+          "requestId": "0734c94a24c9cede57e7109aacc8fc73",
+          "usage": {
+            "inputTokens": 971,
+            "outputTokens": 704,
+            "totalTokens": 1675
+          },
+          "durationMs": 8800,
+          "runId": "ef039387-8589-4c02-8160-663b7dfa9730"
+        },
+        "revision": 0
+      }
+    },
+    {
+      "input": {
+        "task": "transmission",
+        "companyId": "catl",
+        "scenarioId": "policy"
+      },
+      "status": 200,
+      "at": "2026-10-31T07:18:49.102Z",
+      "result": {
+        "analysis": {
+          "company": "宁德时代",
+          "scenario": "海外贸易成本上升",
+          "activeStageIds": [
+            "cell",
+            "system"
+          ],
+          "sourceIds": [
+            "catl-01",
+            "catl-02",
+            "catl-03",
+            "catl-04"
+          ],
+          "mode": "live",
+          "promptVersion": "minimax-research-v7",
+          "facts": [
+            {
+              "text": "公司披露储能解决方案覆盖电芯、电池柜、储能集装箱及系统集成，可归入电池系统与系统集成环节。",
+              "evidenceIds": [
+                "catl-01"
+              ]
+            },
+            {
+              "text": "储能电池系统收入62,439,820千元，占合并营业收入14.74%；此业务包括电芯、模组/电箱、电池柜，并非单纯电芯口径。",
+              "evidenceIds": [
+                "catl-02"
+              ]
+            },
+            {
+              "text": "储能电池系统毛利率为26.71%；只可与同类业务及相近会计口径谨慎比较。",
+              "evidenceIds": [
+                "catl-03"
+              ]
+            }
+          ],
+          "nodes": [
+            {
+              "kind": "假设",
+              "title": "海外贸易成本上升",
+              "text": "假设海外贸易成本上升，但尚不假定具体政策已经生效；需补充适用地区、产品范围、贸易措施及生效日期。",
+              "evidenceIds": []
+            },
+            {
+              "kind": "推断",
+              "title": "受影响环节",
+              "text": "宁德时代的储能解决方案覆盖电芯、电池柜、储能集装箱及系统集成，因此海外贸易成本上升可能沿电芯供应、制造与运输、系统集成及交付环节传导；材料未披露各环节成本结构，传导强度仍待验证。",
+              "evidenceIds": [
+                "catl-01"
+              ]
+            },
+            {
+              "kind": "推断",
+              "title": "公司具体业务",
+              "text": "储能电池系统业务包括电芯、模组/电箱及电池柜，海外贸易成本上升可能影响相关出口成本、交付安排与利润表现，但不能据现有材料判断具体影响程度，也不能将储能业务的变化外推至动力电池业务。",
+              "evidenceIds": [
+                "catl-01",
+                "catl-02"
+              ]
+            },
+            {
+              "kind": "待验证",
+              "title": "财务指标",
+              "text": "需跟踪储能电池系统收入、毛利率、出口收入及订单交付情况，并核对贸易措施覆盖的电芯、模组/电箱、电池柜和系统集成范围；材料未提供地区及产品成本拆分，不估算指标增幅。",
+              "evidenceIds": [
+                "catl-01",
+                "catl-02",
+                "catl-03"
+              ]
+            }
+          ],
+          "conditions": "该情景成立需明确贸易成本上升适用于哪些地区、哪些储能产品、何时生效，以及成本由公司、供应商、客户或物流服务商承担的具体机制；还需确认相关措施是否覆盖电芯、模组/电箱、电池柜、储能集装箱及系统集成环节。",
+          "reverse": "若贸易措施不覆盖公司实际出口地区和产品，或企业能够通过供应调整、合同条款、汇率、产品结构及本地化安排吸收相关成本，影响可能减弱；若公司议价能力下降、交付延迟或客户接受度下降，影响可能增强。现有材料未提供相关数据。",
+          "gap": "尚缺海外收入地区分布、出口产品结构、贸易措施生效日期及适用范围、单位物流与关税成本、供应商及客户责任划分、订单与交付周期、区域产能和本地化安排、套期保值安排，以及储能业务与动力电池业务分拆后的成本和利润敏感性数据。"
+        },
+        "receipt": {
+          "model": "MiniMax-M3.1-Flash",
+          "provider": "MiniMax",
+          "promptVersion": "minimax-research-v7",
+          "requestId": "0734c9537c32640f59ae56599d49d933",
+          "usage": {
+            "inputTokens": 944,
+            "outputTokens": 559,
+            "totalTokens": 1503
+          },
+          "durationMs": 6785,
+          "runId": "90c02e39-b449-4581-aa1d-39e352e2977c"
+        },
+        "revision": 0
+      }
+    },
+    {
+      "input": {
+        "task": "transmission",
+        "companyId": "fluence",
+        "scenarioId": "demand"
+      },
+      "status": 200,
+      "at": "2026-10-31T07:18:55.817Z",
+      "result": {
+        "analysis": {
+          "company": "Fluence",
+          "scenario": "下游储能需求增长",
+          "activeStageIds": [
+            "system",
+            "service"
+          ],
+          "sourceIds": [
+            "fluence-01",
+            "fluence-02",
+            "fluence-03",
+            "fluence-04"
+          ],
+          "mode": "live",
+          "promptVersion": "minimax-research-v7",
+          "facts": [
+            {
+              "text": "期末累计部署量17.8GWh，deployed按达到实质完工且未退役项目累计统计；不是FY2025新增部署量。",
+              "evidenceIds": [
+                "fluence-04"
+              ]
+            },
+            {
+              "text": "储能产品与解决方案收入2,172,360千美元；合计公司收入2,262,830千美元，两者口径不同。",
+              "evidenceIds": [
+                "fluence-01"
+              ]
+            },
+            {
+              "text": "服务收入84,439千美元，数字应用收入6,031千美元。服务与数字应用均有收入证据，但不能将公司归类为电站资产运营商。",
+              "evidenceIds": [
+                "fluence-02"
+              ]
+            }
+          ],
+          "nodes": [
+            {
+              "kind": "假设",
+              "title": "下游储能需求增长",
+              "text": "假设下游储能需求增长，但需求增长并不必然同步转化为公司收入和利润增长。",
+              "evidenceIds": []
+            },
+            {
+              "kind": "推断",
+              "title": "受影响环节",
+              "text": "Fluence的储能产品与解决方案收入可能先受下游需求带动，但实际收入还取决于履约量与每GWh平均售价的共同变化；电池成本下降可能降低平均售价，即使履约量相对稳定，产品收入仍可能承压。",
+              "evidenceIds": [
+                "fluence-01",
+                "fluence-03"
+              ]
+            },
+            {
+              "kind": "推断",
+              "title": "公司具体业务",
+              "text": "Fluence的储能产品与解决方案属于产品收入口径，服务收入及数字应用收入应分别观察；因此，下游需求增长不能直接外推至服务收入或数字应用收入，也不能据此将公司归类为电站资产运营商。",
+              "evidenceIds": [
+                "fluence-01",
+                "fluence-02"
+              ]
+            },
+            {
+              "kind": "待验证",
+              "title": "财务指标",
+              "text": "需要跟踪Fluence的储能产品与解决方案收入、履约量、每GWh平均售价、毛利率及利润表现，并分别观察服务收入和数字应用收入；期末累计部署量可用于观察业务规模，但不代表当期新增部署量。",
+              "evidenceIds": [
+                "fluence-01",
+                "fluence-02",
+                "fluence-03",
+                "fluence-04"
+              ]
+            }
+          ],
+          "conditions": "若下游需求增长能够转化为Fluence的订单、履约量增长，并且产品平均售价下降未抵消履约量增长对产品收入的贡献，则产品收入可能改善；若履约量稳定但平均售价继续下降，收入改善可能不成立。",
+          "reverse": "电池成本下降带来的每GWh平均售价降低可能抵消需求和履约量增长对产品收入的推动；现有材料未证明Fluence的服务收入或数字应用收入与下游储能需求同步变化。",
+          "gap": "尚缺Fluence的订单、实际履约量、平均售价及毛利率对需求情景的敏感性数据，也缺少服务收入和数字应用收入由下游需求驱动的证据；累计部署量不能替代当期新增部署量。"
+        },
+        "receipt": {
+          "model": "MiniMax-M3.1-Flash",
+          "provider": "MiniMax",
+          "promptVersion": "minimax-research-v7",
+          "requestId": "0734c959ccb85f5dd2364accc02b4247",
+          "usage": {
+            "inputTokens": 1028,
+            "outputTokens": 619,
+            "totalTokens": 1647
+          },
+          "durationMs": 6311,
+          "runId": "ce52dfdf-a0eb-4db2-958e-f93ace4121e8"
+        },
+        "revision": 0
+      }
+    },
+    {
+      "input": {
+        "task": "compare",
+        "left": "sungrow",
+        "right": "tesla"
+      },
+      "status": 200,
+      "at": "2026-10-31T07:19:02.811Z",
+      "result": {
+        "comparison": {
+          "summary": "可比依据：均涉及面向不同应用场景的储能系统或产品。阳光电源的PowerTitan采用电池系统与PCS集成设计；特斯拉的Powerwall面向家庭及小型商业场景，Megapack面向工商业、公用事业及发电客户，因此可在系统集成和解决方案交付层面进行业务对照。；比较边界：阳光电源的材料范围是储能系统，全公司还包含光伏逆变器等业务；特斯拉的材料范围是发电与储能分部，包含太阳能发电与储能，也包括家用和大型储能。因此，阳光电源的集团收入不能直接对标特斯拉的纯储能收入，特斯拉的发电与储能分部收入也不能视为纯储能收入。",
+          "comparable": [
+            {
+              "text": "均涉及面向不同应用场景的储能系统或产品。阳光电源的PowerTitan采用电池系统与PCS集成设计；特斯拉的Powerwall面向家庭及小型商业场景，Megapack面向工商业、公用事业及发电客户，因此可在系统集成和解决方案交付层面进行业务对照。",
+              "evidenceIds": [
+                "sungrow-03",
+                "tesla-01"
+              ]
+            },
+            {
+              "text": "均披露了储能业务相关的经营或产品进展指标。阳光电源披露储能系统分产品收入和毛利率；特斯拉披露发电与储能分部收入及年度储能产品部署量，但两者指标的业务范围和计量含义不同，只能分别用于了解各自储能业务。",
+              "evidenceIds": [
+                "sungrow-01",
+                "sungrow-02",
+                "tesla-02",
+                "tesla-03"
+              ]
+            }
+          ],
+          "limitations": [
+            {
+              "text": "阳光电源的材料范围是储能系统，全公司还包含光伏逆变器等业务；特斯拉的材料范围是发电与储能分部，包含太阳能发电与储能，也包括家用和大型储能。因此，阳光电源的集团收入不能直接对标特斯拉的纯储能收入，特斯拉的发电与储能分部收入也不能视为纯储能收入。",
+              "evidenceIds": [
+                "sungrow-01",
+                "tesla-02"
+              ]
+            },
+            {
+              "text": "阳光电源披露的分产品毛利率与特斯拉披露的分部收入、年度部署量并非同一业务指标；报告期名称即使一致，也需核对产品范围、收入确认条件及会计口径。",
+              "evidenceIds": [
+                "sungrow-02",
+                "tesla-02",
+                "tesla-03"
+              ]
+            },
+            {
+              "text": "区域、客户结构及收入确认条件需进一步核对；材料未充分披露相关口径时，不把业务相似性推定为区域或客户结构相似。",
+              "evidenceIds": [
+                "sungrow-01",
+                "tesla-01"
+              ]
+            }
+          ],
+          "gaps": [
+            "需要补充两家公司在区域、客户结构、产品收入确认条件及产品交付范围方面的明细，以判断业务可比边界。",
+            "需要补充统一口径的储能收入、部署量、订单与交付数据，并核对期间、币种和业务范围后，才能进行财务或规模比较。",
+            "需要补充阳光电源PCS单独收入及特斯拉纯储能收入的可核验材料，以区分系统集成、设备销售与发电业务的影响。"
+          ],
+          "validationWarnings": []
+        },
+        "receipt": {
+          "model": "MiniMax-M3.1-Flash",
+          "provider": "MiniMax",
+          "promptVersion": "minimax-research-v7",
+          "requestId": "0734c960054a86246b6bb7595f117143",
+          "usage": {
+            "inputTokens": 1558,
+            "outputTokens": 691,
+            "totalTokens": 2249
+          },
+          "durationMs": 6474,
+          "runId": "da696def-8a34-45c9-a36e-190d1f58e3f8"
+        },
+        "revision": 0
+      }
+    },
+    {
+      "input": {
+        "task": "compare",
+        "left": "catl",
+        "right": "lg"
+      },
+      "status": 200,
+      "at": "2026-10-31T07:19:13.850Z",
+      "result": {
+        "comparison": {
+          "summary": "可比依据：电芯与电池系统：宁德时代披露储能解决方案覆盖电芯、电池柜、储能集装箱及系统集成；LG新能源披露LFP储能电池本地生产，支持电池系统与储能业务存在性。两者可对照储能电池产品及供给能力，但不代表产能、销售规模或收入可直接比较。；比较边界：宁德时代的披露口径是储能电池系统，业务包括电芯、模组或电箱及电池柜，并非单纯电芯；LG新能源的材料同时涉及电池及Vertech储能解决方案，且未单独披露相关收入，因此财务指标缺乏直接对应口径。",
+          "comparable": [
+            {
+              "text": "电芯与电池系统：宁德时代披露储能解决方案覆盖电芯、电池柜、储能集装箱及系统集成；LG新能源披露LFP储能电池本地生产，支持电池系统与储能业务存在性。两者可对照储能电池产品及供给能力，但不代表产能、销售规模或收入可直接比较。",
+              "evidenceIds": [
+                "catl-01",
+                "lg-02"
+              ]
+            },
+            {
+              "text": "系统集成：宁德时代披露其储能解决方案覆盖系统集成；LG新能源子公司Vertech提供电池制造、系统集成、远程监测与设施维护的端到端方案。两者均涉及从电池产品到可交付系统的集成环节，但服务范围与业务边界不完全相同。",
+              "evidenceIds": [
+                "catl-01",
+                "lg-04"
+              ]
+            }
+          ],
+          "limitations": [
+            {
+              "text": "宁德时代的披露口径是储能电池系统，业务包括电芯、模组或电箱及电池柜，并非单纯电芯；LG新能源的材料同时涉及电池及Vertech储能解决方案，且未单独披露相关收入，因此财务指标缺乏直接对应口径。",
+              "evidenceIds": [
+                "catl-02",
+                "lg-01",
+                "lg-04"
+              ]
+            },
+            {
+              "text": "宁德时代储能电池应用覆盖公用事业、工商业及数据中心，但材料未披露各场景收入占比；LG新能源材料未提供对应的区域、客户结构或应用场景拆分，不能据此认定两家公司客户结构相似。",
+              "evidenceIds": [
+                "catl-04",
+                "lg-02"
+              ]
+            },
+            {
+              "text": "即便报告期名称相同，也需进一步核对业务范围、收入确认条件及会计口径；材料未披露区域或客户结构时，相关相似性应保持待核验。",
+              "evidenceIds": [
+                "catl-01",
+                "catl-02",
+                "lg-01",
+                "lg-04"
+              ]
+            }
+          ],
+          "gaps": [
+            "需要补充两家公司可单独识别的储能收入、订单与交付口径，并核对收入确认条件及分部边界。",
+            "需要补充两家公司区域、客户类型、应用场景及客户集中度披露，以核验市场覆盖和客户结构是否可比。",
+            "需要补充可比的储能电池产品范围、系统集成边界、服务内容、产能与实际出货数据，并区分规划目标与已实现结果。",
+            "需要补充统一期间、币种及会计口径下的业务数据，以支持业务层面的财务对照。"
+          ],
+          "validationWarnings": [
+            "有1项模型陈述未通过公司、数字或口径校验，已移除；摘要已由保留条目重新整理。"
+          ]
+        },
+        "receipt": {
+          "model": "MiniMax-M3.1-Flash",
+          "provider": "MiniMax",
+          "promptVersion": "minimax-research-v7",
+          "requestId": "0734c967cdc00df6420f252d87a59664",
+          "usage": {
+            "inputTokens": 1593,
+            "outputTokens": 675,
+            "totalTokens": 2268
+          },
+          "durationMs": 10376,
+          "runId": "b7641093-4a39-44fa-aa49-b046dae0bee0"
+        },
+        "revision": 0
+      }
+    },
+    {
+      "input": {
+        "task": "extract",
+        "companyId": "lg",
+        "title": "LG Energy Solution Releases 2025 Financial Results",
+        "url": "https://www.lgcorp.com/media/release/29814",
+        "publishedAt": "2026-01-29",
+        "period": "2026年度目标；非已实现结果",
+        "locator": "2026 Key Business Initiatives",
+        "sourceText": "公司提出2026年储能产能扩大至60GWh以上的目标；属于规划表态，不能当作当前实际产能或收入。"
+      },
+      "status": 200,
+      "at": "2026-10-31T07:19:17.914Z",
+      "result": {
+        "candidate": {
+          "id": "user-7afec645-08d2-4a18-99ea-efaf48480d9c",
+          "companyId": "lg",
+          "title": "LG Energy Solution Releases 2025 Financial Results",
+          "url": "https://www.lgcorp.com/media/release/29814",
+          "publishedAt": "2026-01-29",
+          "period": "2026年度目标；非已实现结果",
+          "locator": "2026 Key Business Initiatives",
+          "claim": "LG新能源提出2026年储能产能扩大至60GWh以上的目标；该表述属于规划表态，不能据此确认当前实际产能或已实现收入。",
+          "excerpt": "公司提出2026年储能产能扩大至60GWh以上的目标；属于规划表态，不能当作当前实际产能或收入。",
+          "sourceType": "用户提供的官方来源摘录",
+          "reviewStatus": "MiniMax提取候选，待用户复核",
+          "imported": true,
+          "retrievedAt": "2026-10-31"
+        },
+        "receipt": {
+          "model": "MiniMax-M3.1-Flash",
+          "provider": "MiniMax",
+          "promptVersion": "minimax-research-v7",
+          "requestId": "0734c973377330318e84e4f16f5b1c1b",
+          "usage": {
+            "inputTokens": 479,
+            "outputTokens": 175,
+            "totalTokens": 654
+          },
+          "durationMs": 1899,
+          "runId": "308d69db-e17c-470f-9be7-29a3121486b4"
+        },
+        "revision": 0
+      }
+    }
+  ]
+}
